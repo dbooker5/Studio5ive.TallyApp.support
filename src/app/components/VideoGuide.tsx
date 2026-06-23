@@ -42,9 +42,7 @@ export default function VideoGuide({ title, subtitle, duration = "2:45" }: Video
             {subtitle && <p className="text-white/70 text-sm">{subtitle}</p>}
             <div className="flex items-center gap-2 mt-4">
               <div className="w-6 h-6 rounded-lg bg-[#22D3EE] flex items-center justify-center">
-                <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 4h10M3 8h7M3 12h5" stroke="#000" strokeWidth="2" strokeLinecap="round" />
-                </svg>
+                <img src="https://tally.studio5ive.org/logo/ic_launcher.png" alt="TallyApp" className="w-6 h-6 rounded-lg" />
               </div>
               <span className="text-white/80 text-sm font-medium">TallyApp</span>
               {duration && <span className="text-white/50 text-xs ml-2">· {duration}</span>}

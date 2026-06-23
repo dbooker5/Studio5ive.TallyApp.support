@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 
 const pageNames: Record<string, string> = {
-   "/get-started": "Get Started",
+  "/get-started": "Get Started",
   "/account": "Account",
   "/sales": "Sales",
   "/purchases": "Purchases",
@@ -9,7 +9,7 @@ const pageNames: Record<string, string> = {
   "/customers": "Customers",
   "/suppliers": "Suppliers",
   "/reports": "Reports",
-  "/billing": "Billing",
+  "/payments": "Payments",
   "/settings": "Settings",
   "/troubleshooting": "Troubleshooting",
 };

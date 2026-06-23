@@ -47,7 +47,7 @@ export default function HelpFooter() {
         <p className="text-[#A1A1AA] text-sm mb-5">Our support team is available 24/7.</p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a
-            href="mailto:support@tallyapp.com"
+            href="info@studio5ive.org"
             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-[#27272A] bg-[#1a1a1a] text-[#A1A1AA] hover:text-white hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all text-sm font-medium"
           >
             <Mail size={15} className="text-[#22D3EE]" />
@@ -61,7 +61,7 @@ export default function HelpFooter() {
             WhatsApp Chat
           </a>
           <a
-            href="tel:+11234567890"
+            href="tel:+254706751275"
             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-[#27272A] bg-[#1a1a1a] text-[#A1A1AA] hover:text-white hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all text-sm font-medium"
           >
             <Phone size={15} className="text-[#22D3EE]" />

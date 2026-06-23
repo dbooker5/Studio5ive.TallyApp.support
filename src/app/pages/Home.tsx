@@ -162,7 +162,7 @@ function PopularArticlesSection() {
             className="group flex items-start gap-3 p-4 rounded-xl border border-[#27272A] bg-[#111111] hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all text-left"
             onClick={() => navigate(a.path)}
           >
-            <div className="mt-0.5 w-1.5 h-1.5 rounded-full bg-[#22D3EE] flex-shrink-0 mt-1.5" />
+            <div className="mt-0.5 w-1.5 h-1.5 rounded-full bg-[#22D3EE] flex-shrink-0" />
             <div>
               <p className="text-white text-sm font-medium group-hover:text-[#22D3EE] transition-colors">{a.title}</p>
               <p className="text-[#A1A1AA] text-xs mt-0.5">{a.category}</p>

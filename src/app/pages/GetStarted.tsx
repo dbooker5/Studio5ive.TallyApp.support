@@ -51,27 +51,27 @@ const androidContent = (
     </p>
 
     <Note>
-      You must install TallyApp on a device with a supported operating system (Android 8.0 or higher). To use TallyApp Desktop and Web, install TallyApp on your phone first and then <a href="#" className="text-[#22D3EE] hover:underline">link your devices</a>.
+      You must install TallyApp on a device with a supported operating system (Android 8.0 or higher). To use TallyApp Desktop, install TallyApp on your phone first and then <a href="#" className="text-[#22D3EE] hover:underline">create an account</a>.
     </Note>
 
     <Step n={1} title="Download TallyApp from Google Play">
-      Open the <strong className="text-white">Google Play Store</strong> on your Android device and search for <strong className="text-white">TallyApp</strong>. Tap <strong className="text-white">Install</strong> to download.
+      Open the <a href="https://play.google.com/store/apps/details?id=com.studio5ive.TallyApp" target="_blank" className="text-[#22D3EE]">Google Play Store</a> on your Android device and search for <strong className="text-white">TallyApp</strong>. Tap <strong className="text-white">Install</strong> to download.
     </Step>
 
-    <Step n={2} title="Open TallyApp and tap Get Started">
-      Once installed, open the app. Tap <strong className="text-white">Get Started</strong> on the welcome screen to begin setting up your business profile.
+    <Step n={2} title="Launch TallyApp">
+      Once installed, open the app. Tap <strong className="text-white">Get Started</strong> on the welcome screen to <strong className="text-white">Sign Up / Sign In</strong> or use the <strong className="text-white">Continue with Google</strong> button to sign in with your Google account.
     </Step>
 
-    <Step n={3} title="Enter your phone number">
-      Enter your phone number including country code. TallyApp will send a one-time verification code via SMS. Enter the code when prompted.
+    <Step n={3} title="Verify your Account">
+      When <strong className="text-white">Signing Up</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process. If you're <strong className="text-white">Signing In</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process.
     </Step>
 
-    <Step n={4} title="Set up your business profile">
-      Enter your <strong className="text-white">Business Name</strong>, <strong className="text-white">Industry</strong>, and <strong className="text-white">Currency</strong>. You can edit these later in Settings.
+    <Step n={4} title="Set up your Business Entity">
+      Enter your <strong className="text-white">Business Title</strong>, select your <strong className="text-white">Currency</strong>, <strong className="text-white">Products/Services</strong>, fill in the <strong className="text-white">Category, Country, State/Region</strong>, and get your <strong className="text-white">Address</strong> by tapping the <strong className="text-white">Get Location Icon</strong>. You can edit these later in Settings.
     </Step>
 
     <Step n={5} title="Start using TallyApp">
-      You're all set! Explore the dashboard to record your first sale, add products to inventory, or invite team members.
+      You're all set! Explore the dashboard to add your products/services, record your first sale, or invite staff.
     </Step>
 
     <div className="mt-6 p-4 rounded-xl bg-[#111111] border border-[#27272A]">
@@ -80,7 +80,7 @@ const androidContent = (
         "Android 8.0 (Oreo) or higher",
         "At least 100 MB free storage",
         "Active internet connection for sync",
-        "Phone number for verification",
+        "Email or Phone Number for verification",
       ]} />
     </div>
   </div>
@@ -97,19 +97,19 @@ const iosContent = (
     </Note>
 
     <Step n={1} title="Download from the App Store">
-      Open the <strong className="text-white">App Store</strong> and search for <strong className="text-white">TallyApp – Business Manager</strong>. Tap <strong className="text-white">Get</strong> to install.
+      Open the <a href="https://apps.apple.com/us/app/tallyapp-business-manager/id6764712020" target="_blank" className="text-[#22D3EE]">App Store</a> on your iOS device and search for <strong className="text-white">TallyApp</strong>. Tap <strong className="text-white">Get</strong> to download. 
     </Step>
 
     <Step n={2} title="Launch TallyApp">
-      Open TallyApp after installation. On the welcome screen, tap <strong className="text-white">Get Started</strong>.
+      Once installed, open the app. Tap <strong className="text-white">Get Started</strong> on the welcome screen to <strong className="text-white">Sign Up / Sign In</strong> or use the <strong className="text-white">Continue with Google</strong> button to sign in with your Google account
     </Step>
 
-    <Step n={3} title="Verify your phone number">
-      Enter your phone number. You'll receive a 6-digit code via SMS. Enter the code to verify your identity.
+    <Step n={3} title="Verify your Account">
+     When <strong className="text-white">Signing Up</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process. If you're <strong className="text-white">Signing In</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process.
     </Step>
 
-    <Step n={4} title="Configure your business">
-      Set your <strong className="text-white">Business Name</strong>, type, and preferred <strong className="text-white">Currency</strong>. Enable Face ID or Touch ID for quick access.
+    <Step n={4} title="Set up your  Business Entity">
+     Enter your <strong className="text-white">Business Title</strong>, select your <strong className="text-white">Currency</strong>, <strong className="text-white">Products/Services</strong>, fill in the <strong className="text-white">Category, Country, State/Region</strong>, and get your <strong className="text-white">Address</strong> by tapping the <strong className="text-white">Get Location Icon</strong>. You can edit these later in Settings.
     </Step>
 
     <Step n={5} title="Sync with iCloud (optional)">
@@ -122,7 +122,7 @@ const iosContent = (
         "iOS 14.0 or iPadOS 14.0 or higher",
         "iPhone 7 or later / iPad (5th gen) or later",
         "At least 120 MB free storage",
-        "Active phone number for verification",
+        "Active Email or Phone Number for verification",
       ]} />
     </div>
   </div>
@@ -131,27 +131,28 @@ const iosContent = (
 const windowsContent = (
   <div>
     <p className="text-[#A1A1AA] text-sm leading-relaxed mb-4">
-      TallyApp for Windows lets you manage your business from a larger screen. You must have TallyApp installed on your phone first, then link your Windows PC.
+      Install TallyApp on your Windows computer to manage your business with a larger screen and enhanced productivity.
     </p>
 
     <Note type="warning">
-      TallyApp Desktop requires your phone to be set up first. Your phone and PC must be on the same Wi-Fi network for initial linking.
+      TallyApp supports Windows 10 and 11.
     </Note>
 
-    <Step n={1} title="Download TallyApp Desktop">
-      Visit <a href="#" className="text-[#22D3EE] hover:underline">tallyapp.com/download</a> and click <strong className="text-white">Download for Windows</strong>. Run the installer and follow the prompts.
+    <Step n={1} title="Download TallyApp for Windows">
+      Visit <a href="https://tally.studio5ive.org/" className="text-[#22D3EE] hover:underline">TallyApp</a> and click <strong className="text-white">Download for Windows</strong>. Run the installer and follow the prompts.
     </Step>
 
-    <Step n={2} title="Open TallyApp Desktop">
-      Launch TallyApp from the Start menu or Desktop shortcut. Click <strong className="text-white">Link with Phone</strong> on the welcome screen.
+    <Step n={2} title="Launch TallyApp">
+      Launch TallyApp from the Start menu or Desktop shortcut. Click Get Started and <strong className="text-white">Sign Up / Sign In</strong> your account.
     </Step>
 
-    <Step n={3} title="Scan the QR code">
-      Open TallyApp on your phone, go to <strong className="text-white">Settings → Linked Devices → Link a Device</strong>. Point your phone camera at the QR code on your PC screen.
+    <Step n={3} title="Set up your Business Entity">
+      Enter your <strong className="text-white">Business Title</strong>,  select your <strong className="text-white">Currency</strong>, <strong className="text-white">Products/Services</strong>, fill in the <strong className="text-white">Category, Country, State/Region</strong>, and get your <strong className="text-white">Address</strong> by tapping the <strong className="text-white">Get Location Icon</strong>. You can edit these later in Settings.
     </Step>
 
-    <Step n={4} title="Confirm the link">
-      Tap <strong className="text-white">Link Device</strong> on your phone. Your desktop app will sync automatically within seconds.
+
+    <Step n={4} title="Start using TallyApp">
+      You're all set! Explore the dashboard to add your products/services, record your first sale, or invite staff.
     </Step>
 
     <div className="mt-6 p-4 rounded-xl bg-[#111111] border border-[#27272A]">
@@ -160,7 +161,8 @@ const windowsContent = (
         "Windows 10 (64-bit) version 1903 or later",
         "Windows 11 supported",
         "4 GB RAM minimum, 8 GB recommended",
-        "TallyApp installed on your phone (Android or iOS)",
+        "500 MB free disk space",
+        "Active Email or Phone Number for verification",
       ]} />
     </div>
   </div>
@@ -169,27 +171,27 @@ const windowsContent = (
 const macContent = (
   <div>
     <p className="text-[#A1A1AA] text-sm leading-relaxed mb-4">
-      TallyApp for Mac brings the full power of TallyApp to your MacBook or iMac. Link it with your phone to access all your business data from a larger screen.
+      Install TallyApp on your MacBook or iMac to access your business information and perform daily operations from a larger workspace.
     </p>
 
     <Note>
-      Apple Silicon (M1/M2/M3) and Intel Macs are both supported. Your phone must have TallyApp installed before linking.
+      TallyApp supports both Intel-based Macs and Apple Silicon (M1, M2, M3 and later).
     </Note>
 
-    <Step n={1} title="Download from the Mac App Store or website">
-      Visit <a href="#" className="text-[#22D3EE] hover:underline">tallyapp.com/download</a> or open the <strong className="text-white">Mac App Store</strong> and search for TallyApp. Click <strong className="text-white">Get</strong>.
+    <Step n={1} title="Download TallyApp for MacOS">
+      Visit <a href="https://tally.studio5ive.org/" className="text-[#22D3EE] hover:underline">TallyApp</a> open the downloaded package and follow the installation instructions or open the <strong className="text-white">Mac App Store</strong> and search for TallyApp. Click <strong className="text-white">Get</strong>.
     </Step>
 
-    <Step n={2} title="Launch and link your phone">
-      Open TallyApp on your Mac. Click <strong className="text-white">Link with Phone</strong>, then on your iPhone/Android go to <strong className="text-white">Settings → Linked Devices → Link a Device</strong>.
+    <Step n={2} title="Launch TallyApp">
+      Open TallyApp on your Mac. Click <strong className="text-white">Get Started</strong> and <strong className="text-white">Sign Up / Sign In</strong> your account.
     </Step>
 
-    <Step n={3} title="Scan the QR code">
-      Point your phone camera at the QR code displayed on your Mac. Confirm the device link when prompted.
+    <Step n={3} title=" Set up your Business Entity">
+      Enter your <strong className="text-white">Business Title</strong>,  selec t your <strong className="text-white">Currency</strong>, <strong className="text-white">Products/Services</strong>, fill in the <strong className="text-white">Category, Country, State/Region</strong>, and get your <strong className="text-white">Address</strong> by tapping the <strong className="text-white">Get Location Icon</strong>. You can edit these later in Settings.
     </Step>
 
-    <Step n={4} title="Start working">
-      Your Mac app is now synced. Use keyboard shortcuts, multi-window view, and full-screen mode for maximum productivity.
+    <Step n={4} title="Start using TallyApp">
+      You're all set! Explore the dashboard to add your products/services, record your first sale, or invite staff.
     </Step>
 
     <div className="mt-6 p-4 rounded-xl bg-[#111111] border border-[#27272A]">
@@ -198,7 +200,8 @@ const macContent = (
         "macOS 11 (Big Sur) or later",
         "Apple Silicon or Intel Core i5/i7",
         "4 GB RAM minimum",
-        "TallyApp installed on your Android or iPhone",
+        "500 MB free disk space",
+        "Active Email or Phone Number for verification",
       ]} />
     </div>
   </div>
@@ -214,9 +217,9 @@ const tabs = [
 const cat = getCategoryById("get-started");
 
 const relatedArticles = [
-  { title: "Linking Devices", description: "Connect TallyApp across your phone, tablet, and desktop.", path: "/get-started", readTime: "4 min" },
-  { title: "Navigating the Dashboard", description: "Understand TallyApp's main interface and key features.", path: "/get-started", readTime: "4 min" },
-  { title: "Importing Existing Data", description: "Migrate your existing business data into TallyApp.", path: "/get-started", readTime: "7 min" },
+  { title: "Create an Account / Login", description: "Create a new TallyApp account or log in to your existing account.", path: "/get-started", readTime: "4 min" },
+  { title: "Creating an Entity", description: "Create your first business entity in TallyApp.", path: "/get-started", readTime: "4 min" },
+  { title: "Importing   Existing Data", description: "Migrate your existing business data into TallyApp.", path: "/get-started", readTime: "7 min" },
   { title: "Managing Team Members", description: "Invite and manage roles for your team.", path: "/account", readTime: "6 min" },
 ];
 
@@ -226,7 +229,7 @@ export default function GetStarted() {
       <Breadcrumb items={[{ label: "Get Started" }]} />
 
       <div className="mb-2 flex items-center gap-2">
-        <span className="text-xs text-[#A1A1AA]">Updated June 2024</span>
+        <span className="text-xs text-[#A1A1AA]">Updated June 2026</span>
         <span className="text-[#27272A]">·</span>
         <span className="text-xs text-[#A1A1AA]">5 min read</span>
       </div>

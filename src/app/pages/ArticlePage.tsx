@@ -76,7 +76,7 @@ const categoryContent: Record<string, { intro: string; steps: { title: string; b
       { title: "Export or share reports", body: "Tap 'Export' on any report to download as PDF or Excel. Share directly via email or messaging apps." },
     ],
   },
-  billing: {
+  payments: {
     intro: "Manage your TallyApp subscription, upgrade your plan, and access your billing history. All plans come with a 14-day free trial.",
     steps: [
       { title: "View current plan", body: "Go to Account → Billing to see your active plan, renewal date, and included features." },

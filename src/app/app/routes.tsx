@@ -4,11 +4,17 @@ import Root from "../layout/Root";
 import Home from "../pages/Home";
 import EmptyPage from "../pages/EmptyPage";
 import SearchPage from "../pages/SearchPage";
+import GetStarted from "../pages/GetStarted";
+import ArticlePage from "../pages/ArticlePage";
+import ErrorPage from "../pages/ErrorPage";
+import IntroductionArticle from "../pages/IntroductionArticle";
+import SetupAccountArticle from "../pages/SetupAccountArticle";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -16,47 +22,59 @@ export const router = createBrowserRouter([
       },
       {
         path: "get-started",
-        Component: Home,
+        Component: GetStarted,
+      },
+      {
+        path: "get-started/introduction",
+        Component: IntroductionArticle,
+      },
+      {
+        path: "get-started/setup-account",
+        Component: SetupAccountArticle,
       },
       {
         path: "account",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: "sales",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: "purchases",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: "inventory",
-        Component: EmptyPage,
+        Component: ArticlePage,
+      },
+      {
+        path: "payments",
+        Component: ArticlePage,
       },
       {
         path: "customers",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: "suppliers",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: "reports",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
-        path: "billing",
-        Component: EmptyPage,
+        path: "products",
+        Component: ArticlePage,
       },
       {
         path: "settings",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: "troubleshooting",
-        Component: EmptyPage,
+        Component: ArticlePage,
       },
       {
         path: ":categoryId/:articleSlug",

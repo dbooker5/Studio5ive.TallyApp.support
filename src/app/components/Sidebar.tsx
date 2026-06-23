@@ -134,9 +134,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
                 {isExpanded && (
                   <div className="pb-1">
                     {cat.articles.map((article) => {
-                      const articlePath = `${cat.path}/${createSlug(
-                        article.title
-                      )}`;
+                      const articlePath = `${cat.path}/${article.slug}`;
 
                       const isArticleActive =
                         location.pathname === articlePath;
@@ -164,7 +162,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
 
         <div className="flex-shrink-0 border-t border-[#27272A] px-4 py-3">
           <p className="text-[10px] text-[#A1A1AA] leading-relaxed">
-            © 2024 TallyApp Inc. ·{" "}
+            © 2026 TallyApp.Studio5ive.org ·  {"  "}
             <a href="#" className="hover:text-[#22D3EE] transition-colors">
               Privacy
             </a>{" "}
