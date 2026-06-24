@@ -9,6 +9,9 @@ import ArticlePage from "../pages/ArticlePage";
 import ErrorPage from "../pages/ErrorPage";
 import IntroductionArticle from "../pages/IntroductionArticle";
 import SetupAccountArticle from "../pages/SetupAccountArticle";
+import CreateEntityArticle from "../pages/CreateEntityArticle";
+import ImportDataArticle from "../pages/ImportDataArticle";
+import DashboardOverviewArticle from "../pages/DashboardOverviewArticle";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +34,18 @@ export const router = createBrowserRouter([
       {
         path: "get-started/setup-account",
         Component: SetupAccountArticle,
+      },
+      {
+        path: "get-started/creating-entity",
+        Component: CreateEntityArticle,
+      },
+      {
+        path: "get-started/importing-data",
+        Component: ImportDataArticle,
+      },
+       {
+        path: "get-started/dashboard-overview",
+        Component: DashboardOverviewArticle,
       },
       {
         path: "account",
