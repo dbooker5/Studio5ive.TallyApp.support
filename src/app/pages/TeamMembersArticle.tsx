@@ -41,7 +41,7 @@ export default function TeamMembersArticle() {
         
         <div className="space-y-6 mb-10">
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">1</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Access Team Settings</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -50,7 +50,7 @@ export default function TeamMembersArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">2</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Invite New Member</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -59,7 +59,7 @@ export default function TeamMembersArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">3</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Assign a Role</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -68,7 +68,7 @@ export default function TeamMembersArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">4</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Send Invitation</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">

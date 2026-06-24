@@ -40,7 +40,7 @@ export default function TwoStepVerificationArticle() {
         
         <div className="space-y-6 mb-10">
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">1</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Go to Security Settings</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -49,7 +49,7 @@ export default function TwoStepVerificationArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">2</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Enable Verification</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -58,7 +58,7 @@ export default function TwoStepVerificationArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">3</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Set Your PIN</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -67,7 +67,7 @@ export default function TwoStepVerificationArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#a855f7]/15 border border-[#a855f7]/30 flex items-center justify-center text-[#a855f7] text-xs font-bold mt-0.5">4</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Add Recovery Email</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -77,7 +77,7 @@ export default function TwoStepVerificationArticle() {
           </div>
         </div>
 
-        <div className="p-5 rounded-xl border border-[#a855f7]/30 bg-[#a855f7]/5 flex items-center justify-between">
+        <div className="p-5 rounded-xl border border-[#22D3EE]/30 bg-[#22D3EE]/5 flex items-center justify-between">
            <div>
              <h3 className="text-white font-semibold mb-1">Forgot your PIN?</h3>
              <p className="text-[#A1A1AA] text-sm">If you forget your PIN, tap "Forgot PIN" on the login screen to receive a reset link to your recovery email.</p>
