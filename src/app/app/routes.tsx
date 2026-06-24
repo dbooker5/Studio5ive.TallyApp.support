@@ -23,6 +23,7 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home,
       },
+      // Get Started Articles
       {
         path: "get-started",
         Component: GetStarted,
@@ -47,54 +48,211 @@ export const router = createBrowserRouter([
         path: "get-started/dashboard-overview",
         Component: DashboardOverviewArticle,
       },
+      // Accounts Articles
       {
         path: "account",
         Component: ArticlePage,
       },
       {
+        path: "account/profile",
+        Component: ArticlePage,
+      },
+      {
+        path: "account/two-step-verification",
+        Component: ArticlePage,
+      },
+      {
+        path: "account/team-members",
+        Component: ArticlePage,
+      },
+      {
+        path: "account/privacy",
+        Component: ArticlePage,
+      },
+      {
+        path: "account/notifications",
+        Component: ArticlePage,
+      },
+       // Inventory Articles
+      {
+        path: "inventory",
+        Component: ArticlePage,
+      },  
+      {
+        path: "inventory/add-products",
+        Component: ArticlePage,
+      },  
+      {
+        path: "inventory/bulk-products",
+        Component: ArticlePage,
+      },  
+      {
+        path: "inventory/stock-adjustments",
+        Component: ArticlePage,
+      },  
+      {
+        path: "inventory/stock-alerts",
+        Component: ArticlePage,
+      },  
+      {
+        path: "inventory/barcode",
+        Component: ArticlePage,
+      }, 
+      // Sales Articles
+      {
         path: "sales",
         Component: ArticlePage,
       },
+      {
+        path: "sales/record-sale",
+        Component: ArticlePage,
+      },
+      {
+        path: "sales/invoices",
+        Component: ArticlePage,
+      },
+      {
+        path: "sales/returns",
+        Component: ArticlePage,
+      },
+      {
+        path: "sales/discounts-taxes",
+        Component: ArticlePage,
+      },
+      {
+        path: "sales/daily-summary",
+        Component: ArticlePage,
+      },   
+      // Purchases Articles
       {
         path: "purchases",
         Component: ArticlePage,
       },
       {
-        path: "inventory",
+        path: "purchases/recording-purchase",
         Component: ArticlePage,
       },
+      {
+        path: "purchases/supplier-payments",
+        Component: ArticlePage,
+      },
+      {
+        path: "purchases/returns-refunds",
+        Component: ArticlePage,
+      },
+      {
+        path: "purchases/expenses",
+        Component: ArticlePage,
+      },
+      // Payments Articles
       {
         path: "payments",
         Component: ArticlePage,
       },
       {
+        path: "payments/mode-of-payments",
+        Component: ArticlePage,
+      },
+      {
+        path: "payments/payments-received",
+        Component: ArticlePage,
+      },
+      {
+        path: "payments/payments-made",
+        Component: ArticlePage,
+      },
+      {
+        path: "payments/integrations",
+        Component: ArticlePage,
+      },
+      // Customers Articles
+      {
         path: "customers",
         Component: ArticlePage,
       },
+
+      {
+        path: "customers/add-customer",
+        Component: ArticlePage,
+      },
+      {
+        path: "customers/customer-payments",
+        Component: ArticlePage,
+      },
+      // Suppliers Articles
       {
         path: "suppliers",
         Component: ArticlePage,
       },
       {
+        path: "suppliers/add-supplier",
+        Component: ArticlePage,
+      },
+      {
+        path: "suppliers/receivables",
+        Component: ArticlePage,
+      },
+      {
+        path: "suppliers/payables",
+        Component: ArticlePage,
+      },  
+      // Reports Articles
+      {
         path: "reports",
         Component: ArticlePage,
       },
       {
-        path: "products",
+        path: "reports/profit-loss",
         Component: ArticlePage,
       },
+      {
+        path: "reports/cash-flow",
+        Component: ArticlePage,
+      },
+      {
+        path: "reports/export-reports",
+        Component: ArticlePage,
+      },
+      {
+        path: "reports/sales-analytics",
+        Component: ArticlePage,
+      },
+      // Settings Articles
       {
         path: "settings",
         Component: ArticlePage,
       },
+      // Troubleshooting Articles
       {
         path: "troubleshooting",
         Component: ArticlePage,
       },
       {
+        path: "troubleshooting/sync-issues",
+        Component: ArticlePage,
+      },
+       {
+        path: "troubleshooting/login-issues",
+        Component: ArticlePage,
+      },
+       {
+        path: "troubleshooting/missing-data",
+        Component: ArticlePage,
+      },
+      {
+        path: "troubleshooting/performance",
+        Component: ArticlePage,
+      },
+      {
+        path: "troubleshooting/contact-support",
+        Component: ArticlePage,
+      },
+      // Fallback Routes
+      {
         path: ":categoryId/:articleSlug",
         Component: EmptyPage,
       },
+      // Search Route
       {
         path: "search",
         Component: SearchPage,

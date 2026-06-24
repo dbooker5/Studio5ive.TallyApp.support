@@ -103,7 +103,7 @@ export const categories: Category[] = [
       { id: "p-1", title: "Mode of Payments", slug: "mode-of-payments", description: "Add and manage payment modes for your business.", readTime: "4 min" },
       { id: "p-2", title: "Payments Received", slug: "payments-received", description: "Record and track payments received from customers.", readTime: "4 min" },
       { id: "p-3", title: "Payments Made", slug: "payments-made", description: "Record and track payments made to suppliers.", readTime: "4 min" },
-      { id: "p-4", title: "Expenses", slug: "expenses", description: "Track business expenses for accurate accounting.", readTime: "4 min" },
+      { id: "p-4", title: "Integrations", slug: "integrations", description: "Integrate your business with other platforms.", readTime: "4 min" },
     ],
   },
 
@@ -130,8 +130,8 @@ export const categories: Category[] = [
     path: "/suppliers",
     articles: [
       { id: "su-1", title: "Adding Suppliers", slug: "add-suppliers", description: "Register supplier profiles and payment terms.", readTime: "3 min" },
-      { id: "su-2", title: "Supplier Ledger", slug: "supplier-ledger", description: "Track all transactions with a specific supplier.", readTime: "4 min" },
-      { id: "su-3", title: "Outstanding Payables", slug: "payables", description: "View and manage amounts owed to suppliers.", readTime: "4 min" },
+      { id: "su-2", title: "Receivables", slug: "receivables", description: "Track all transactions with a specific supplier.", readTime: "4 min" },
+      { id: "su-3", title: "Payables", slug: "payables", description: "View and manage amounts owed to suppliers.", readTime: "4 min" },
     ],
   },
   {
