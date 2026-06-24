@@ -12,6 +12,11 @@ import SetupAccountArticle from "../pages/SetupAccountArticle";
 import CreateEntityArticle from "../pages/CreateEntityArticle";
 import ImportDataArticle from "../pages/ImportDataArticle";
 import DashboardOverviewArticle from "../pages/DashboardOverviewArticle";
+import ProfileArticle from "../pages/ProfileArticle";
+import TwoStepVerificationArticle from "../pages/TwoStepVerificationArticle";
+import TeamMembersArticle from "../pages/TeamMembersArticle";
+import PrivacySettingsArticle from "../pages/PrivacySettingsArticle";
+import NotificationsArticle from "../pages/NotificationsArticle";
 
 export const router = createBrowserRouter([
   {
@@ -55,23 +60,23 @@ export const router = createBrowserRouter([
       },
       {
         path: "account/profile",
-        Component: ArticlePage,
+        Component: ProfileArticle,
       },
       {
         path: "account/two-step-verification",
-        Component: ArticlePage,
+        Component: TwoStepVerificationArticle,
       },
       {
         path: "account/team-members",
-        Component: ArticlePage,
+        Component: TeamMembersArticle,
       },
       {
         path: "account/privacy",
-        Component: ArticlePage,
+        Component: PrivacySettingsArticle,
       },
       {
         path: "account/notifications",
-        Component: ArticlePage,
+        Component: NotificationsArticle,
       },
        // Inventory Articles
       {
