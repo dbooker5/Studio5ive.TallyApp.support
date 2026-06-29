@@ -78,7 +78,7 @@ export default function TeamMembersArticle() {
           </div>
         </div>
 
-        <div className="p-5 rounded-xl border border-[#a855f7]/30 bg-[#a855f7]/5 flex items-center justify-between">
+        <div className="p-5 rounded-xl border border-[#22D3EE]/30 bg-[#22D3EE]/5 flex items-center justify-between">
            <div>
              <h3 className="text-white font-semibold mb-1">Need to revoke access?</h3>
              <p className="text-[#A1A1AA] text-sm">You can remove a team member at any time by tapping their name in the Team list and selecting "Remove Member".</p>

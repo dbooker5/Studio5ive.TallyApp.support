@@ -17,6 +17,11 @@ import TwoStepVerificationArticle from "../pages/TwoStepVerificationArticle";
 import TeamMembersArticle from "../pages/TeamMembersArticle";
 import PrivacySettingsArticle from "../pages/PrivacySettingsArticle";
 import NotificationsArticle from "../pages/NotificationsArticle";
+import AddProductsArticle from "../pages/AddProductsArticle";
+import BulkProductsArticle from "../pages/BulkProductsArticle";
+import StockAdjustmentsArticle from "../pages/StockAdjustmentsArticle";
+import StockAlertsArticle from "../pages/StockAlertsArticle";
+import BarcodeScanningArticle from "../pages/BarcodeScanningArticle";
 
 export const router = createBrowserRouter([
   {
@@ -85,23 +90,23 @@ export const router = createBrowserRouter([
       },  
       {
         path: "inventory/add-products",
-        Component: ArticlePage,
+        Component: AddProductsArticle,
       },  
       {
         path: "inventory/bulk-products",
-        Component: ArticlePage,
+        Component: BulkProductsArticle,
       },  
       {
         path: "inventory/stock-adjustments",
-        Component: ArticlePage,
+        Component: StockAdjustmentsArticle,
       },  
       {
         path: "inventory/stock-alerts",
-        Component: ArticlePage,
+        Component: StockAlertsArticle,
       },  
       {
         path: "inventory/barcode",
-        Component: ArticlePage,
+        Component: BarcodeScanningArticle,
       }, 
       // Sales Articles
       {
