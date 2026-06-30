@@ -23,6 +23,40 @@ import StockAdjustmentsArticle from "../pages/StockAdjustmentsArticle";
 import StockAlertsArticle from "../pages/StockAlertsArticle";
 import BarcodeScanningArticle from "../pages/BarcodeScanningArticle";
 
+import RecordingPurchaseArticle from "../pages/RecordingPurchaseArticle";
+import SupplierPaymentsArticle from "../pages/SupplierPaymentsArticle";
+import ReturnsRefundsArticle from "../pages/ReturnsRefundsArticle";
+import ExpensesArticle from "../pages/ExpensesArticle";
+import RecordingSaleArticle from "../pages/RecordingSaleArticle";
+import CreatingInvoicesArticle from "../pages/CreatingInvoicesArticle";
+import SalesReturnsRefundsArticle from "../pages/SalesReturnsRefundsArticle";
+import DiscountTaxManagementArticle from "../pages/DiscountTaxManagementArticle";
+import DailySalesSummaryArticle from "../pages/DailySalesSummaryArticle";
+import ModeOfPaymentsArticle from "../pages/ModeOfPaymentsArticle";
+import PaymentsReceivedArticle from "../pages/PaymentsReceivedArticle";
+import PaymentsMadeArticle from "../pages/PaymentsMadeArticle";
+import IntegrationsArticle from "../pages/IntegrationsArticle";
+import AddingCustomersArticle from "../pages/AddingCustomersArticle";
+import CustomerLedgerArticle from "../pages/CustomerLedgerArticle";
+import SendingPaymentRemindersArticle from "../pages/SendingPaymentRemindersArticle";
+import CreditLimitSettingsArticle from "../pages/CreditLimitSettingsArticle";
+import AddingSuppliersArticle from "../pages/AddingSuppliersArticle";
+import ReceivablesArticle from "../pages/ReceivablesArticle";
+import PayablesArticle from "../pages/PayablesArticle";
+import ProfitLossReportArticle from "../pages/ProfitLossReportArticle";
+import CashFlowStatementArticle from "../pages/CashFlowStatementArticle";
+import ExportingReportsArticle from "../pages/ExportingReportsArticle";
+import SalesAnalyticsArticle from "../pages/SalesAnalyticsArticle";
+import CurrencySettingsArticle from "../pages/CurrencySettingsArticle";
+import TaxConfigurationArticle from "../pages/TaxConfigurationArticle";
+import FiscalYearSettingsArticle from "../pages/FiscalYearSettingsArticle";
+import DataBackupRestoreArticle from "../pages/DataBackupRestoreArticle";
+import AppNotSyncingArticle from "../pages/AppNotSyncingArticle";
+import LoginProblemsArticle from "../pages/LoginProblemsArticle";
+import MissingTransactionsArticle from "../pages/MissingTransactionsArticle";
+import AppCrashingorSlowArticle from "../pages/AppCrashingorSlowArticle";
+import ContactingSupportArticle from "../pages/ContactingSupportArticle";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -109,154 +143,54 @@ export const router = createBrowserRouter([
         Component: BarcodeScanningArticle,
       }, 
       // Sales Articles
-      {
-        path: "sales",
-        Component: ArticlePage,
-      },
-      {
-        path: "sales/record-sale",
-        Component: ArticlePage,
-      },
-      {
-        path: "sales/invoices",
-        Component: ArticlePage,
-      },
-      {
-        path: "sales/returns",
-        Component: ArticlePage,
-      },
-      {
-        path: "sales/discounts-taxes",
-        Component: ArticlePage,
-      },
-      {
-        path: "sales/daily-summary",
-        Component: ArticlePage,
-      },   
+      { path: "sales", Component: ArticlePage },
+      { path: "sales/record-sale", Component: RecordingSaleArticle },
+      { path: "sales/invoices", Component: CreatingInvoicesArticle },
+      { path: "sales/returns", Component: SalesReturnsRefundsArticle },
+      { path: "sales/discounts-taxes", Component: DiscountTaxManagementArticle },
+      { path: "sales/daily-summary", Component: DailySalesSummaryArticle },
       // Purchases Articles
-      {
-        path: "purchases",
-        Component: ArticlePage,
-      },
-      {
-        path: "purchases/recording-purchase",
-        Component: ArticlePage,
-      },
-      {
-        path: "purchases/supplier-payments",
-        Component: ArticlePage,
-      },
-      {
-        path: "purchases/returns-refunds",
-        Component: ArticlePage,
-      },
-      {
-        path: "purchases/expenses",
-        Component: ArticlePage,
-      },
+      { path: "purchases", Component: ArticlePage },
+      { path: "purchases/recording-purchase", Component: RecordingPurchaseArticle },
+      { path: "purchases/supplier-payments", Component: SupplierPaymentsArticle },
+      { path: "purchases/returns-refunds", Component: ReturnsRefundsArticle },
+      { path: "purchases/expenses", Component: ExpensesArticle },
       // Payments Articles
-      {
-        path: "payments",
-        Component: ArticlePage,
-      },
-      {
-        path: "payments/mode-of-payments",
-        Component: ArticlePage,
-      },
-      {
-        path: "payments/payments-received",
-        Component: ArticlePage,
-      },
-      {
-        path: "payments/payments-made",
-        Component: ArticlePage,
-      },
-      {
-        path: "payments/integrations",
-        Component: ArticlePage,
-      },
+      { path: "payments", Component: ArticlePage },
+      { path: "payments/mode-of-payments", Component: ModeOfPaymentsArticle },
+      { path: "payments/payments-received", Component: PaymentsReceivedArticle },
+      { path: "payments/payments-made", Component: PaymentsMadeArticle },
+      { path: "payments/integrations", Component: IntegrationsArticle },
       // Customers Articles
-      {
-        path: "customers",
-        Component: ArticlePage,
-      },
-
-      {
-        path: "customers/add-customer",
-        Component: ArticlePage,
-      },
-      {
-        path: "customers/customer-payments",
-        Component: ArticlePage,
-      },
+      { path: "customers", Component: ArticlePage },
+      { path: "customers/add-customers", Component: AddingCustomersArticle },
+      { path: "customers/customer-ledger", Component: CustomerLedgerArticle },
+      { path: "customers/payment-reminders", Component: SendingPaymentRemindersArticle },
+      { path: "customers/credit-limits", Component: CreditLimitSettingsArticle },
       // Suppliers Articles
-      {
-        path: "suppliers",
-        Component: ArticlePage,
-      },
-      {
-        path: "suppliers/add-supplier",
-        Component: ArticlePage,
-      },
-      {
-        path: "suppliers/receivables",
-        Component: ArticlePage,
-      },
-      {
-        path: "suppliers/payables",
-        Component: ArticlePage,
-      },  
+      { path: "suppliers", Component: ArticlePage },
+      { path: "suppliers/add-suppliers", Component: AddingSuppliersArticle },
+      { path: "suppliers/receivables", Component: ReceivablesArticle },
+      { path: "suppliers/payables", Component: PayablesArticle },
       // Reports Articles
-      {
-        path: "reports",
-        Component: ArticlePage,
-      },
-      {
-        path: "reports/profit-loss",
-        Component: ArticlePage,
-      },
-      {
-        path: "reports/cash-flow",
-        Component: ArticlePage,
-      },
-      {
-        path: "reports/export-reports",
-        Component: ArticlePage,
-      },
-      {
-        path: "reports/sales-analytics",
-        Component: ArticlePage,
-      },
+      { path: "reports", Component: ArticlePage },
+      { path: "reports/profit-loss", Component: ProfitLossReportArticle },
+      { path: "reports/cash-flow", Component: CashFlowStatementArticle },
+      { path: "reports/export-reports", Component: ExportingReportsArticle },
+      { path: "reports/sales-analytics", Component: SalesAnalyticsArticle },
       // Settings Articles
-      {
-        path: "settings",
-        Component: ArticlePage,
-      },
+      { path: "settings", Component: ArticlePage },
+      { path: "settings/currency", Component: CurrencySettingsArticle },
+      { path: "settings/tax-config", Component: TaxConfigurationArticle },
+      { path: "settings/fiscal-year", Component: FiscalYearSettingsArticle },
+      { path: "settings/backup", Component: DataBackupRestoreArticle },
       // Troubleshooting Articles
-      {
-        path: "troubleshooting",
-        Component: ArticlePage,
-      },
-      {
-        path: "troubleshooting/sync-issues",
-        Component: ArticlePage,
-      },
-       {
-        path: "troubleshooting/login-issues",
-        Component: ArticlePage,
-      },
-       {
-        path: "troubleshooting/missing-data",
-        Component: ArticlePage,
-      },
-      {
-        path: "troubleshooting/performance",
-        Component: ArticlePage,
-      },
-      {
-        path: "troubleshooting/contact-support",
-        Component: ArticlePage,
-      },
+      { path: "troubleshooting", Component: ArticlePage },
+      { path: "troubleshooting/sync-issues", Component: AppNotSyncingArticle },
+      { path: "troubleshooting/login-issues", Component: LoginProblemsArticle },
+      { path: "troubleshooting/missing-data", Component: MissingTransactionsArticle },
+      { path: "troubleshooting/performance", Component: AppCrashingorSlowArticle },
+      { path: "troubleshooting/contact-support", Component: ContactingSupportArticle },
       // Fallback Routes
       {
         path: ":categoryId/:articleSlug",
