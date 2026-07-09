@@ -1,4 +1,5 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Pen, Settings } from "lucide-react";
+import { MdOutlinePassword } from "react-icons/md";
 import Breadcrumb from "../components/Breadcrumb";
 import VideoGuide from "../components/VideoGuide";
 import RelatedArticles from "../components/RelatedArticles";
@@ -45,25 +46,35 @@ export default function ProfileArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Open Account Settings</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                From the main dashboard, tap the <strong>Profile Icon</strong> in the top-right corner to access your Account Settings.
+                From the main dashboard, tap the <strong className="text-white">Settings</strong> with icon
+                <span className="inline-flex items-center gap-1 mx-1 align-middle">
+                    <Settings size={18} strokeWidth={3} className="text-white" /> 
+                </span>in the left sidebar to access your Account Settings.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Select Business Profile</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Select Edit Profile</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Tap on <strong>Business Profile</strong>. Here, you will see your current business name, logo, address, and contact details.
+                Tap on <strong className="text-white">Edit Profile</strong>. Here, you will see your current user name, logo, address, and contact details.
+                Tap on any field such as <strong className="text-white">Username</strong>, <strong className="text-white">Phone Number</strong>, or <strong className="text-white">Email Address</strong> to make changes. You can also tap your profile picture  with the icon
+                <span className="inline-flex items-center gap-1 mx-1 align-middle">
+                    <Pen size={18} className="text-white" /> 
+                </span> to upload a new image from your device. 
               </p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Edit Information</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Change Password</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Tap on any field such as <strong>Business Name</strong>, <strong>Phone Number</strong>, or <strong>Email Address</strong> to make changes. You can also tap your logo to upload a new image from your device.
+                Tap on the <strong className="text-white">Change Password</strong> with the icon 
+                <span className="inline-flex items-center gap-1 mx-1 align-middle">
+                    <MdOutlinePassword size={18} className="text-white" /> 
+                </span> to update your password. You will enter your email and an OTP will be sent to it. Enter the OTP and your new password to update. 
               </p>
             </div>
           </div>
@@ -72,7 +83,7 @@ export default function ProfileArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Save Changes</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Once you are satisfied with your updates, tap the <strong>Save</strong> button at the bottom of the screen. Your changes will immediately reflect across all your future invoices and reports.
+                Once you are satisfied with your updates, tap the <strong className="text-white">Update</strong> button at the bottom of the screen. Your changes will immediately reflect across all your entities.
               </p>
             </div>
           </div>
@@ -81,7 +92,7 @@ export default function ProfileArticle() {
         <div className="p-5 rounded-xl border border-[#22D3EE]/30 bg-[#22D3EE]/5 flex items-center justify-between">
            <div>
              <h3 className="text-white font-semibold mb-1">Need to manage multiple entities?</h3>
-             <p className="text-[#A1A1AA] text-sm">You must switch to the respective entity from the dropdown before editing its profile.</p>
+             <p className="text-[#A1A1AA] text-sm">You must switch to the respective entity from the main dashboard before editing its profile.</p>
            </div>
         </div>
       </div>

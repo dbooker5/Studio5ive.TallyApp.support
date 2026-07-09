@@ -43,9 +43,18 @@ export default function CreateEntityArticle() {
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
+              <p className="text-white font-semibold text-[15px] mb-1">Navigate to Entity Section</p>
+              <p className="text-[#A1A1AA] text-sm leading-relaxed">
+                Tap the <strong className="text-blue-500">+ New Entity</strong> button on the right side of the dashboard to create your first entity. 
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
+            <div>
               <p className="text-white font-semibold text-[15px] mb-1">Enter Business Details</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Provide your <strong>Business Title</strong> (the name of your store or company). This name will appear on all your generated invoices and reports.
+                Provide your <strong className="text-white">Business Title</strong> (the name of your store or company). This name will appear on all your generated invoices and reports.
               </p>
             </div>
           </div>
@@ -54,7 +63,7 @@ export default function CreateEntityArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Select Core Settings</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Choose your primary <strong>Currency</strong> and specify the <strong>Products/Services</strong> you offer. Select the most relevant <strong>Category</strong> that fits your industry.
+                Choose your primary <strong className="text-white">Currency</strong> and specify the <strong className="text-white">Products/Services</strong> you offer. Select the most relevant <strong className="text-white">Category</strong> that fits your industry.
               </p>
             </div>
           </div>
@@ -63,7 +72,7 @@ export default function CreateEntityArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Set Your Location</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Fill in your <strong>Country</strong> and <strong>State/Region</strong>. For exact positioning, simply tap the <strong>Get Location Icon</strong> to automatically pull your store's address using GPS.
+                Fill in your <strong className="text-white">Country</strong> and <strong className="text-white">State/Region</strong>. For exact positioning, simply tap the <strong className="text-blue-500">Get Location</strong> button to automatically pull your store's address using GPS.
               </p>
             </div>
           </div>
@@ -72,7 +81,7 @@ export default function CreateEntityArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Complete Setup</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Save your entity details. You can always update or modify these details later by navigating to <strong>Settings &gt; Business Profile</strong> from your dashboard.
+                Save your entity details. You can always update or modify these details later by navigating to <strong className="text-white">Settings &gt; Business Profile</strong> from your dashboard.
               </p>
             </div>
           </div>

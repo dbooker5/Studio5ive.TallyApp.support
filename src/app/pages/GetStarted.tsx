@@ -1,4 +1,5 @@
-import { Smartphone, Apple, Monitor, Laptop, CheckCircle2, AlertCircle } from "lucide-react";
+import { CheckCircle2, AlertCircle } from "lucide-react";
+import { FaAndroid, FaApple, FaWindows, FaLaptop } from "react-icons/fa";
 import Breadcrumb from "../components/Breadcrumb";
 import ArticleTabs from "../components/ArticleTabs";
 import VideoGuide from "../components/VideoGuide";
@@ -63,7 +64,7 @@ const androidContent = (
     </Step>
 
     <Step n={3} title="Verify your Account">
-      When <strong className="text-white">Signing Up</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process. If you're <strong className="text-white">Signing In</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process.
+      When <strong className="text-white">Signing Up</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process. If you're <strong className="text-white">Signing In</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the authentication process.
     </Step>
 
     <Step n={4} title="Set up your Business Entity">
@@ -105,10 +106,10 @@ const iosContent = (
     </Step>
 
     <Step n={3} title="Verify your Account">
-     When <strong className="text-white">Signing Up</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process. If you're <strong className="text-white">Signing In</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process.
+     When <strong className="text-white">Signing Up</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the verification process. If you're <strong className="text-white">Signing In</strong>, you'll receive a one-time code via <strong className="text-white">Email</strong> to complete the authentication process.
     </Step>
 
-    <Step n={4} title="Set up your  Business Entity">
+    <Step n={4} title="Set up your Business Entity">
      Enter your <strong className="text-white">Business Title</strong>, select your <strong className="text-white">Currency</strong>, <strong className="text-white">Products/Services</strong>, fill in the <strong className="text-white">Category, Country, State/Region</strong>, and get your <strong className="text-white">Address</strong> by tapping the <strong className="text-white">Get Location Icon</strong>. You can edit these later in Settings.
     </Step>
 
@@ -208,10 +209,10 @@ const macContent = (
 );
 
 const tabs = [
-  { platform: "Android", icon: <Smartphone size={14} />, content: androidContent },
-  { platform: "iOS", icon: <Apple size={14} />, content: iosContent },
-  { platform: "Windows", icon: <Monitor size={14} />, content: windowsContent },
-  { platform: "Mac", icon: <Laptop size={14} />, content: macContent },
+  { platform: "Android", icon: <FaAndroid size={14} />, content: androidContent },
+  { platform: "iOS", icon: <FaApple size={14} />, content: iosContent },
+  { platform: "Windows", icon: <FaWindows size={14} />, content: windowsContent },
+  { platform: "Mac", icon: <FaLaptop size={14} />, content: macContent },
 ];
 
 const cat = getCategoryById("get-started");

@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Plus, CloudUpload } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import VideoGuide from "../components/VideoGuide";              
 import RelatedArticles from "../components/RelatedArticles";
@@ -31,7 +31,7 @@ export default function ImportDataArticle() {
       </p>
 
       <VideoGuide
-        title="How to Create Your Business Entity"
+        title="How to Import Your Data"
         subtitle="A quick walk-through of the entity setup process"
         duration="3:05"
       />
@@ -43,18 +43,18 @@ export default function ImportDataArticle() {
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Navigate to Import Section</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Navigate to Products Section</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Navigate to the <strong>Import</strong> section from your dashboard.
+                Tap the <span className="inline-flex items-center justify-center gap-1 bg-white text-[#111111] px-2 py-0.5 rounded-sm text-xs font-semibold mx-1 shadow-sm"><Plus size={12} strokeWidth={3} /> Add</span> button on the right side of the dashboard to add Products singularly, or tap the <strong className="text-blue-500">Bulk Upload</strong> button to upload Products in bulk.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Select Data Type</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Download Template File</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Select the type of data you want to import (e.g., <strong>Products</strong>, <strong>Customers</strong>, <strong>Sales</strong>). Download the corresponding template.
+                At the bottom of the bulk upload section, tap <strong className="text-blue-500">Download Template</strong> to get an Excel template for the data you want to upload.
               </p>
             </div>
           </div>
@@ -63,16 +63,19 @@ export default function ImportDataArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Fill In Template</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Fill in the template with your data. Ensure you follow the correct format and include all required information.
+                Fill in the template with your data. Ensure you follow the correct format and include all required information. After filling the template, tap the
+                <span className="inline-flex items-center gap-1 mx-1 align-middle">
+                    <CloudUpload size={18} strokeWidth={3} className="text-white" /> button to upload the file.
+                </span>
               </p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Complete Setup</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Review and Confirm</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Save your entity details. You can always update or modify these details later by navigating to <strong>Settings &gt; Business Profile</strong> from your dashboard.
+                After uploading the file, TallyApp will validate the data. Review the imported items and confirm the import to finalize the process.
               </p>
             </div>
           </div>

@@ -44,7 +44,7 @@ export default function SetupAccountArticle() {
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Launch the App</p>
-              <p className="text-[#A1A1AA] text-sm leading-relaxed">Open TallyApp on your device and tap the <strong>Get Started</strong> button on the welcome screen.</p>
+              <p className="text-[#A1A1AA] text-sm leading-relaxed">Open TallyApp on your device and tap the <strong className="text-white">Get Started</strong> button on the welcome screen.</p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -52,7 +52,7 @@ export default function SetupAccountArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Choose Sign Up Method</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                You can select <strong>Continue with Google</strong> to instantly link your Google account, or enter your <strong>Email address</strong> to create an account manually.
+                You can select <strong className="text-white">Continue with Google</strong> to instantly link your Google account, or enter your <strong className="text-white">Email address</strong> to create an account manually.
               </p>
             </div>
           </div>
@@ -74,7 +74,7 @@ export default function SetupAccountArticle() {
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Select Sign In</p>
-              <p className="text-[#A1A1AA] text-sm leading-relaxed">If you already have an account, tap the <strong>Sign In</strong> option on the start screen.</p>
+              <p className="text-[#A1A1AA] text-sm leading-relaxed">If you already have an account, tap the <strong className="text-white">Log In</strong> option on the start screen.</p>
             </div>
           </div>
           <div className="flex gap-4">
@@ -82,7 +82,7 @@ export default function SetupAccountArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Enter Your Credentials</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Provide your registered email address or tap <strong>Continue with Google</strong> if you linked your Google account during signup.
+                Provide your registered email address or tap <strong className="text-white">Continue with Google</strong> if you linked your Google account during signup.
               </p>
             </div>
           </div>

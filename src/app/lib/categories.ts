@@ -29,8 +29,8 @@ export const categories: Category[] = [
       { id: "gs-1", title: "Introduction to TallyApp", slug: "introduction", description: "Learn what TallyApp is and how it can help your business.", readTime: "3 min", platforms: ["Android", "iOS", "Windows", "Mac"] },
       { id: "gs-2", title: "Setting Up Your Account", slug: "setup-account", description: "Create and configure your TallyApp account.", readTime: "5 min", platforms: ["Android", "iOS", "Windows", "Mac"] },
       { id: "gs-3", title: "Creating an Entity", slug: "creating-entity", description: "Create your first business entity in TallyApp.", readTime: "4 min", platforms: ["Android", "iOS", "Windows", "Mac"] },
-      { id: "gs-4", title: "Importing Existing Data", slug: "importing-data", description: "Migrate your existing business data into TallyApp.", readTime: "7 min" },
-      { id: "gs-5", title: "Navigating the Dashboard", slug: "dashboard-overview", description: " Understand TallyApp's main interface and key features.", readTime: "4 min", platforms: ["Android", "iOS", "Windows", "Mac"] },
+      { id: "gs-4", title: "Navigating the Dashboard", slug: "dashboard-overview", description: " Understand TallyApp's main interface and key features.", readTime: "4 min", platforms: ["Android", "iOS", "Windows", "Mac"] },
+      { id: "gs-5", title: "Importing Existing Data", slug: "importing-data", description: "Migrate your existing business data into TallyApp.", readTime: "7 min", platforms: ["Android", "iOS", "Windows", "Mac"] },
     ],
   },
   {
