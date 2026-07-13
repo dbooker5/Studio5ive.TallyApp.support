@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Plus,Clock, CloudUpload } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import VideoGuide from "../components/VideoGuide";
 import RelatedArticles from "../components/RelatedArticles";
@@ -40,38 +40,59 @@ export default function BulkProductsArticle() {
         
         <div className="space-y-6 mb-10">
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">1</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
+            <div>
+              <p className="text-white font-semibold text-[15px] mb-1">Open your Entity</p>
+              <p className="text-[#A1A1AA] text-sm leading-relaxed">
+                From your dashboard, tap the <strong className="text-white">Product</strong> section to view your current catalog.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
+            <div>
+              <p className="text-white font-semibold text-[15px] mb-1">Tap Add Product</p>
+              <p className="text-[#A1A1AA] text-sm leading-relaxed">
+                Tap the <span className="inline-flex items-center justify-center gap-1 bg-white text-[#111111] px-2 py-0.5 rounded-sm text-xs font-semibold mx-1 shadow-sm"><Plus size={12} strokeWidth={3} /> Add</span> button on the right side of the Product screen. Then on the top right side, tap <strong className="text-blue-500">Bulk Upload</strong>.
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-4">
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Download Template</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                In the Inventory view, tap the <strong>More (⋮)</strong> menu and select <strong>Bulk Upload</strong>. Tap <strong>Download Template</strong> to get the correctly formatted Excel file.
+                At the bottom of the bulk upload section, tap <strong className="text-blue-500">Download Template</strong> to get an Excel template for the data you want to upload.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">2</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full  bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Fill Your Data</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Open the downloaded file in Excel or Google Sheets. Copy and paste your product names, prices, SKU, and opening stock into the matching columns.
+                Open the downloaded file in Excel or Google Sheets. Copy and paste your product names, prices, SKU, and opening stock into the matching columns. Please review the Required Columns in the Bulk Upload section before filling the template.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">3</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full  bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Upload the File</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Save the file as a CSV or Excel format. Return to TallyApp and tap <strong>Upload File</strong>, then select your saved document.
+                Fill in the template with your data. Ensure you follow the correct format and include all required information. After filling the template, tap the
+                <span className="inline-flex items-center gap-1 mx-1 align-middle">
+                    <CloudUpload size={18} strokeWidth={3} className="text-white" /> button to upload the file.
+                </span> 
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">4</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full  bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">5</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Review and Save</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Upload and Review Products</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                TallyApp will validate your data. If everything looks good, tap <strong>Import Products</strong> to finalize the addition to your catalog.
+                TallyApp will validate your data. If everything looks good, tap the <strong className="text-blue-500">Upload Products</strong> button to finalize the addition to your catalog.
               </p>
             </div>
           </div>

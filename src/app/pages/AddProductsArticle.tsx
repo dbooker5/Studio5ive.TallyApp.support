@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Plus } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import VideoGuide from "../components/VideoGuide";
 import RelatedArticles from "../components/RelatedArticles";
@@ -41,38 +41,38 @@ export default function AddProductsArticle() {
         
         <div className="space-y-6 mb-10">
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">1</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Open Inventory</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Open your Entity</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                From your dashboard, tap the <strong>Inventory</strong> icon to view your current catalog.
+                From your dashboard, tap the <strong className="text-white">Product</strong> section to view your current catalog.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">2</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Tap Add Product</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Tap the <strong>+ Add Product</strong> button located at the top right of the screen.
+                Tap the <span className="inline-flex items-center justify-center gap-1 bg-white text-[#111111] px-2 py-0.5 rounded-sm text-xs font-semibold mx-1 shadow-sm"><Plus size={12} strokeWidth={3} /> Add</span> button on the right side of the Product screen.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">3</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Enter Details</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Fill in the basic info: <strong>Item Name</strong>, <strong>Selling Price</strong>, and <strong>Cost Price</strong>. You can also specify the unit type (e.g., kg, pieces, hours).
+                Fill in the <strong className="text-white">Basic</strong>, <strong className="text-white">Supplier</strong>, <strong className="text-white">Stock</strong>, <strong className="text-white">Financial</strong>, and <strong className="text-white">Attribute</strong> details. You can also specify the unit type (e.g., <span className="text-[#A1A1AA] text-sm leading-relaxed">kg</span>, <span className="text-[#A1A1AA] text-sm leading-relaxed">pieces</span>, <span className="text-[#A1A1AA] text-sm leading-relaxed">hours</span>).
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">4</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Save Item</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Add an optional product image by tapping the placeholder, then tap <strong>Save</strong> to add it to your catalog.
+                Add an optional product <strong className="text-white">Barcode</strong> and <strong className="text-white">Custom Field</strong>, then tap <strong className="text-blue-500">Create</strong> button to add it to your catalog.
               </p>
             </div>
           </div>
