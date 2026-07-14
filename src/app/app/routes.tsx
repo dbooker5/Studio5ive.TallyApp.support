@@ -57,6 +57,16 @@ import MissingTransactionsArticle from "../pages/MissingTransactionsArticle";
 import AppCrashingorSlowArticle from "../pages/AppCrashingorSlowArticle";
 import ContactingSupportArticle from "../pages/ContactingSupportArticle";
 
+// Sales pages
+import Sales from "../pages/sales/Sales";
+import SalesOverviewArticle from "../pages/sales/SalesOverviewArticle";
+import CreateSaleArticle from "../pages/sales/CreateSaleArticle";
+import SelectProductsArticle from "../pages/sales/SelectProductsArticle";
+import PaymentMethodsArticle from "../pages/sales/PaymentMethodsArticle";
+import ConfirmPaymentArticle from "../pages/sales/ConfirmPaymentArticle";
+import SelectCustomerArticle from "../pages/sales/SelectCustomerArticle";
+import PaymentStatusArticle from "../pages/sales/PaymentStatusArticle";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -142,13 +152,39 @@ export const router = createBrowserRouter([
         path: "inventory/barcode",
         Component: BarcodeScanningArticle,
       }, 
-      // Sales Articles
-      { path: "sales", Component: ArticlePage },
-      { path: "sales/record-sale", Component: RecordingSaleArticle },
-      { path: "sales/invoices", Component: CreatingInvoicesArticle },
-      { path: "sales/returns", Component: SalesReturnsRefundsArticle },
-      { path: "sales/discounts-taxes", Component: DiscountTaxManagementArticle },
-      { path: "sales/daily-summary", Component: DailySalesSummaryArticle },
+      // Sales
+      {
+        path: "sales",
+        Component: Sales,
+      },
+      {
+        path: "sales/overview",
+        Component: SalesOverviewArticle,
+      },
+      {
+        path: "sales/create-sale",
+        Component: CreateSaleArticle,
+      },
+      {
+        path: "sales/select-products",
+        Component: SelectProductsArticle,
+      },
+      {
+        path: "sales/payment-methods",
+        Component: PaymentMethodsArticle,
+      },
+      {
+        path: "sales/confirm-payment",
+        Component: ConfirmPaymentArticle,
+      },
+      {
+        path: "sales/select-customer",
+        Component: SelectCustomerArticle,
+      },
+      {
+        path: "sales/payment-status",
+        Component: PaymentStatusArticle,
+      },
       // Purchases Articles
       { path: "purchases", Component: ArticlePage },
       { path: "purchases/recording-purchase", Component: RecordingPurchaseArticle },
