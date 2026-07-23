@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock, Smartphone } from "lucide-react";
+import { CheckCircle2, Clock, Smartphone, Tag} from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
 import VideoGuide from "../components/VideoGuide";
 import RelatedArticles from "../components/RelatedArticles";
@@ -46,16 +46,16 @@ export default function BarcodeScanningArticle() {
         
         <div className="space-y-6 mb-10">
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">1</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Open the Scanner</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                When adding a product to your inventory or creating a new sale, tap the <strong>Barcode Icon</strong> located next to the search bar.
+                When adding a product to your inventory or creating a new sale, tap the <span className="inline-flex items-center justify-center gap-1 text-white text-xs font-semibold mx-1"><Tag size={16} strokeWidth={3} /></span> button on the bottom navigation bar.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">2</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">2</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Grant Permissions</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -64,7 +64,7 @@ export default function BarcodeScanningArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">3</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Scan the Item</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
@@ -73,7 +73,7 @@ export default function BarcodeScanningArticle() {
             </div>
           </div>
           <div className="flex gap-4">
-            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#10b981]/15 border border-[#10b981]/30 flex items-center justify-center text-[#10b981] text-xs font-bold mt-0.5">4</div>
+            <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Automatic Action</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">

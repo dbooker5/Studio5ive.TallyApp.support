@@ -42,9 +42,9 @@ export const categories: Category[] = [
     path: "/account",
     articles: [
       { id: "ac-1", title: "Profile & Business Info", slug: "profile", description: "Update your business name, logo, and contact details.", readTime: "3 min" },
-      { id: "ac-2", title: "Two-Step Verification", slug: "two-step-verification", description: "Add an extra layer of security to your account.", readTime: "4 min" },
+     // { id: "ac-2", title: "Two-Step Verification", slug: "two-step-verification", description: "Add an extra layer of security to your account.", readTime: "4 min" },
       { id: "ac-3", title: "Managing Team Members", slug: "team-members", description: "Invite and manage roles for your team.", readTime: "6 min" },
-      { id: "ac-4", title: "Privacy Settings", slug: "privacy", description: "Control what data TallyApp stores and shares.", readTime: "3 min" },
+     // { id: "ac-4", title: "Privacy Settings", slug: "privacy", description: "Control what data TallyApp stores and shares.", readTime: "3 min" },
       { id: "ac-5", title: "Notifications", slug: "notifications", description: "Configure alerts for sales, low stock, and more.", readTime: "3 min" },
     ],
   },
@@ -59,7 +59,7 @@ export const categories: Category[] = [
       { id: "inv-1", title: "Adding Products", slug: "add-products", description: "Add products and services to your TallyApp catalog.", readTime: "4 min" },
       { id: "inv-2", title: "Bulk Upload Products", slug: "bulk-products", description: "Add multiple products at once using CSV or Excel.", readTime: "5 min" },
       { id: "inv-3", title: "Stock Adjustments", slug: "stock-adjustments", description: "Manually update stock levels for your products.", readTime: "3 min" },
-      { id: "inv-4", title: "Stock Alerts", slug: "stock-alerts", description: "Set and receive alerts when stock falls below threshold.", readTime: "3 min" },
+      //{ id: "inv-4", title: "Stock Alerts", slug: "stock-alerts", description: "Set and receive alerts when stock falls below threshold.", readTime: "3 min" },
       { id: "inv-5", title: "Barcode Scanning", slug: "barcode", description: "Use your phone camera to scan product barcodes.", readTime: "4 min", platforms: ["Android", "iOS"] },
     ],
   },
@@ -72,7 +72,7 @@ export const categories: Category[] = [
     path: "/purchases",
     articles: [
       { id: "pu-1", title: "Recording a Purchase", slug: "recording-purchase", description: "Record goods purchased from suppliers.", readTime: "4 min" },
-      { id: "pu-2", title: "Supplier Payments", slug: "supplier-payments", description: "Track and settle outstanding payments to suppliers.", readTime: "5 min" },
+      {id: "su-2", title: "Payables", slug: "payables", description: "View and manage amounts owed to suppliers.", readTime: "4 min" },
       { id: "pu-3", title: "Returns & Refunds", slug: "returns-refunds", description: "Handle returned goods and debit notes.", readTime: "4 min" },
       { id: "pu-4", title: "Expenses", slug: "expenses", description: "Record business expenses for accurate accounting.", readTime: "4 min" },
     ],
@@ -116,12 +116,13 @@ export const categories: Category[] = [
     path: "/customers",
     articles: [
       { id: "cu-1", title: "Adding Customers", slug: "add-customers", description: "Create customer profiles with contact and credit info.", readTime: "3 min" },
-      { id: "cu-2", title: "Customer Ledger", slug: "customer-ledger", description: "View the full transaction history for any customer.", readTime: "4 min" },
-      { id: "cu-3", title: "Sending Payment Reminders", slug: "payment-reminders", description: "Send outstanding balance reminders via WhatsApp or SMS.", readTime: "3 min" },
-      { id: "cu-4", title: "Credit Limit Settings", slug: "credit-limits", description: "Set maximum credit limits per customer.", readTime: "3 min" },
+      //{ id: "cu-2", title: "Customer Ledger", slug: "customer-ledger", description: "View the full transaction history for any customer.", readTime: "4 min" },
+      //{ id: "cu-3", title: "Sending Payment Reminders", slug: "payment-reminders", description: "Send outstanding balance reminders via WhatsApp or SMS.", readTime: "3 min" },
+      //{ id: "cu-4", title: "Credit Limit Settings", slug: "credit-limits", description: "Set maximum credit limits per customer.", readTime: "3 min" },
     ],
   },
-  {
+  
+  /*{
     id: "suppliers",
     label: "Suppliers",
     icon: "Truck",
@@ -130,10 +131,11 @@ export const categories: Category[] = [
     path: "/suppliers",
     articles: [
       { id: "su-1", title: "Adding Suppliers", slug: "add-suppliers", description: "Register supplier profiles and payment terms.", readTime: "3 min" },
-      { id: "su-2", title: "Receivables", slug: "receivables", description: "Track all transactions with a specific supplier.", readTime: "4 min" },
-      { id: "su-3", title: "Payables", slug: "payables", description: "View and manage amounts owed to suppliers.", readTime: "4 min" },
+      {id: "pu-2", title: "Supplier Payments", slug: "supplier-payments", description: "Track and settle outstanding payments to suppliers.", readTime: "5 min" },
+      { id: "su-3", title: "Receivables", slug: "receivables", description: "Track all transactions with a specific supplier.", readTime: "4 min" },
     ],
-  },
+  },*/
+
   {
     id: "reports",
     label: "Reports",
@@ -142,13 +144,14 @@ export const categories: Category[] = [
     color: "#6366f1",
     path: "/reports",
     articles: [
-      { id: "rp-1", title: "Profit & Loss Report", slug: "profit-loss", description: "Understand your business profitability over any period.", readTime: "5 min" },
-      { id: "rp-2", title: "Cash Flow Statement", slug: "cash-flow", description: "Track money moving in and out of your business.", readTime: "5 min" },
-      { id: "rp-3", title: "Exporting Reports", slug: "export-reports", description: "Download reports as PDF or Excel spreadsheets.", readTime: "3 min" },
-      { id: "rp-4", title: "Sales Analytics", slug: "sales-analytics", description: "Visualize sales trends and top-performing products.", readTime: "4 min" },
+      { id: "rp-1", title: "Reports & Analytics", slug: "reports-analytics", description: "Explore business insights with TallyApp's analytics.", readTime: "5 min" },
+      { id: "rp-2", title: "Filtering & Sorting", slug: "filtering-sorting", description: "Filter and sort your reports to find the information you need.", readTime: "5 min" },
+      //{ id: "rp-3", title: "Exporting Reports", slug: "export-reports", description: "Download reports as PDF or Excel spreadsheets.", readTime: "3 min" },
+      //{ id: "rp-4", title: "Sales Analytics", slug: "sales-analytics", description: "Visualize sales trends and top-performing products.", readTime: "4 min" },
     ],
   },
-  {
+
+  /*{
     id: "settings",
     label: "Settings",
     icon: "Settings",
@@ -161,7 +164,8 @@ export const categories: Category[] = [
       { id: "st-3", title: "Fiscal Year Settings", slug: "fiscal-year", description: "Define your business accounting period start and end.", readTime: "3 min" },
       { id: "st-4", title: "Data Backup & Restore", slug: "backup", description: "Keep your data safe with automatic cloud backups.", readTime: "4 min" },
     ],
-  },
+  },*/
+
   {
     id: "troubleshooting",
     label: "Troubleshooting",

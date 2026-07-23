@@ -43,10 +43,8 @@ import CreditLimitSettingsArticle from "../pages/CreditLimitSettingsArticle";
 import AddingSuppliersArticle from "../pages/AddingSuppliersArticle";
 import ReceivablesArticle from "../pages/ReceivablesArticle";
 import PayablesArticle from "../pages/PayablesArticle";
-import ProfitLossReportArticle from "../pages/ProfitLossReportArticle";
-import CashFlowStatementArticle from "../pages/CashFlowStatementArticle";
-import ExportingReportsArticle from "../pages/ExportingReportsArticle";
-import SalesAnalyticsArticle from "../pages/SalesAnalyticsArticle";
+import ReportsAndAnalyticsArticle from "../pages/Reports&AnalyticsArticle";
+import FilteringReportsArticle from "../pages/FilteringReportsArticle";
 import CurrencySettingsArticle from "../pages/CurrencySettingsArticle";
 import TaxConfigurationArticle from "../pages/TaxConfigurationArticle";
 import FiscalYearSettingsArticle from "../pages/FiscalYearSettingsArticle";
@@ -152,7 +150,7 @@ export const router = createBrowserRouter([
       // Purchases Articles
       { path: "purchases", Component: ArticlePage },
       { path: "purchases/recording-purchase", Component: RecordingPurchaseArticle },
-      { path: "purchases/supplier-payments", Component: SupplierPaymentsArticle },
+      { path: "purchases/payables", Component: PayablesArticle },
       { path: "purchases/returns-refunds", Component: ReturnsRefundsArticle },
       { path: "purchases/expenses", Component: ExpensesArticle },
       // Payments Articles
@@ -171,13 +169,13 @@ export const router = createBrowserRouter([
       { path: "suppliers", Component: ArticlePage },
       { path: "suppliers/add-suppliers", Component: AddingSuppliersArticle },
       { path: "suppliers/receivables", Component: ReceivablesArticle },
-      { path: "suppliers/payables", Component: PayablesArticle },
+      { path: "suppliers/supplier-payments", Component: SupplierPaymentsArticle },
       // Reports Articles
       { path: "reports", Component: ArticlePage },
-      { path: "reports/profit-loss", Component: ProfitLossReportArticle },
-      { path: "reports/cash-flow", Component: CashFlowStatementArticle },
-      { path: "reports/export-reports", Component: ExportingReportsArticle },
-      { path: "reports/sales-analytics", Component: SalesAnalyticsArticle },
+      { path: "reports/reports-analytics", Component: ReportsAndAnalyticsArticle },
+      { path: "reports/filtering-sorting", Component: FilteringReportsArticle },
+      //{ path: "reports/export-reports", Component: ExportingReportsArticle },
+      //{ path: "reports/sales-analytics", Component: SalesAnalyticsArticle },
       // Settings Articles
       { path: "settings", Component: ArticlePage },
       { path: "settings/currency", Component: CurrencySettingsArticle },

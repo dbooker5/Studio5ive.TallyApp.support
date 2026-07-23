@@ -1,4 +1,5 @@
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Plus } from "lucide-react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import Breadcrumb from "../components/Breadcrumb";
 import VideoGuide from "../components/VideoGuide";
 import RelatedArticles from "../components/RelatedArticles";
@@ -43,9 +44,9 @@ export default function TeamMembersArticle() {
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">1</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Access Team Settings</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Access Entity</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Go to <strong>Account Settings</strong> and tap on <strong>Team Members</strong> to view your current roster.
+                Navigate to the top right side, tap on the <span className="inline-flex items-center justify-center gap-1 bg-white/80 text-[#111111] px-1 py-1 rounded-sm text-xs font-semibold mx-1 shadow-sm"><Plus size={12} strokeWidth={3} /> </span> button on the Entity Dashboard screen.
               </p>
             </div>
           </div>
@@ -54,25 +55,25 @@ export default function TeamMembersArticle() {
             <div>
               <p className="text-white font-semibold text-[15px] mb-1">Invite New Member</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Tap the <strong>Invite Member</strong> button. Enter the email address of the person you want to invite.
+                Tap the <span className="inline-flex items-center justify-center gap-1 text-white text-xs font-semibold mx-1"><Plus size={20} strokeWidth={3} /></span> button to add a new staff/team member. Enter the  <strong className="text-white">Username</strong> or invite via <strong className="text-white">Email address</strong> or <strong className="text-white">Social Media Platform</strong> of the person you want to invite.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">3</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Assign a Role</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Send Invitation</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Select a role for the new member (e.g., <strong>Owner</strong>, <strong>Manager</strong>, or <strong>Cashier</strong>). Each role has customized permissions.
+                Tap <strong>Send Invite</strong>. The user will receive an email with a link to join your business entity.
               </p>
             </div>
           </div>
           <div className="flex gap-4">
             <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">4</div>
             <div>
-              <p className="text-white font-semibold text-[15px] mb-1">Send Invitation</p>
+              <p className="text-white font-semibold text-[15px] mb-1">Assign a Role</p>
               <p className="text-[#A1A1AA] text-sm leading-relaxed">
-                Tap <strong>Send Invite</strong>. The user will receive an email with a link to join your business entity.
+                After inviting the member, tap the three dotted vertical <span className="inline-flex items-center justify-center gap-1 text-white text-md font-semibold mx-1"><BsThreeDotsVertical /></span>button to give <strong className="text-white">Permissions</strong>, <strong className="text-white">Roles</strong>, & other preferences.
               </p>
             </div>
           </div>
@@ -81,7 +82,7 @@ export default function TeamMembersArticle() {
         <div className="p-5 rounded-xl border border-[#22D3EE]/30 bg-[#22D3EE]/5 flex items-center justify-between">
            <div>
              <h3 className="text-white font-semibold mb-1">Need to revoke access?</h3>
-             <p className="text-[#A1A1AA] text-sm">You can remove a team member at any time by tapping their name in the Team list and selecting "Remove Member".</p>
+             <p className="text-[#A1A1AA] text-sm">You can remove a team member at any time by tapping the <span className="inline-flex items-center justify-center gap-1 text-white text-md font-semibold mx-1"><BsThreeDotsVertical /></span>button next to the team members in the Staff/Team memberlist and selecting "Remove".</p>
            </div>
         </div>
       </div>

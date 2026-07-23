@@ -156,22 +156,7 @@ export default function ArticlePage() {
             duration="3:15"
           />
 
-          <div className="mt-8 mb-2">
-            <h2 className="text-white text-xl font-semibold mb-6">Step-by-step guide</h2>
-            <div className="space-y-6">
-              {content.steps.map((step, i) => (
-                <div key={i} className="flex gap-4">
-                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-[#22D3EE]/15 border border-[#22D3EE]/30 flex items-center justify-center text-[#22D3EE] text-xs font-bold mt-0.5">
-                    {i + 1}
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold text-[15px] mb-1">{step.title}</p>
-                    <p className="text-[#A1A1AA] text-sm leading-relaxed">{step.body}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
 
           {/* Article list */}
           <div className="mt-10 border-t border-[#27272A] pt-8">
