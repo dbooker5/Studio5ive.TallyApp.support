@@ -77,21 +77,80 @@ export const categories: Category[] = [
       { id: "pu-4", title: "Expenses", slug: "expenses", description: "Record business expenses for accurate accounting.", readTime: "4 min" },
     ],
   },
-  {
-    id: "sales",
-    label: "Sales",
-    icon: "ShoppingCart",
-    description: "Record transactions, invoices, and track revenue in real time",
-    color: "#22D3EE",
-    path: "/sales",
-    articles: [
-      { id: "sl-1", title: "Recording a Sale", slug: "record-sale", description: "Learn how to quickly log a sale transaction.", readTime: "4 min" },
-      { id: "sl-2", title: "Creating Invoices", slug: "invoices", description: "Generate professional invoices for your customers.", readTime: "5 min" },
-      { id: "sl-3", title: "Sales Returns & Refunds", slug: "returns", description: "Process refunds and manage returned goods.", readTime: "4 min" },
-      { id: "sl-4", title: "Discount & Tax Management", slug: "discounts-taxes", description: "Apply discounts and configure tax rates for sales.", readTime: "5 min" },
-      { id: "sl-5", title: "Daily Sales Summary", slug: "daily-summary", description: "View and share your daily sales performance.", readTime: "3 min" },
-    ],
-  },
+ {
+  id: "sales",
+  label: "Sales",
+  icon: "ShoppingCart",
+  description:
+    "Create sales, select products, collect payments, and track daily sales performance",
+  color: "#22D3EE",
+  path: "/sales",
+  articles: [
+    {
+      id: "sl-1",
+      title: "Sales Overview",
+      slug: "overview",
+      description:
+        "Understand today's expected sales, revenue, balances, profit, items sold, and units sold.",
+      readTime: "4 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+    {
+      id: "sl-2",
+      title: "Starting a New Sale",
+      slug: "create-sale",
+      description:
+        "Open the Sales tab and start recording a new sale using the Create or Add Sale button.",
+      readTime: "4 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+    {
+      id: "sl-3",
+      title: "Selecting Products & Scanning Barcodes",
+      slug: "select-products",
+      description:
+        "Select multiple products, adjust quantities and prices, or scan products using the barcode scanner.",
+      readTime: "6 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+    {
+      id: "sl-4",
+      title: "Choosing Payment Methods",
+      slug: "payment-methods",
+      description:
+        "Select Cash, M-Pesa, Card, or combine multiple payment methods for one transaction.",
+      readTime: "5 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+    {
+      id: "sl-5",
+      title: "Confirming Full or Partial Payments",
+      slug: "confirm-payment",
+      description:
+        "Confirm payment amounts, split payments, record partial payments, add a due date, and edit the sale date where permitted.",
+      readTime: "6 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+    {
+      id: "sl-6",
+      title: "Selecting a Customer",
+      slug: "select-customer",
+      description:
+        "Attach the sale to an existing customer, create a new customer, or continue without selecting one.",
+      readTime: "4 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+    {
+      id: "sl-7",
+      title: "Completing a Sale & Payment Status",
+      slug: "payment-status",
+      description:
+        "Complete the transaction, print a receipt, and understand completed or incomplete payment status.",
+      readTime: "5 min",
+      platforms: ["Android", "iOS", "Windows", "Mac"],
+    },
+  ],
+},
   {
     id: "payments",
     label: "Payments",
@@ -193,7 +252,36 @@ export function getArticleBySlug(categoryId: string, slug: string): Article | un
 }
 
 export const popularArticles = [
-  { title: "How to Record a Sale", path: "/sales", category: "Sales" },
+   {
+    title: "How to Record a Sale",
+    path: "/sales/create-sale",
+    category: "Sales",
+  },
+  {
+    title: "Setting Up Your Account",
+    path: "/get-started/setup-account",
+    category: "Get Started",
+  },
+  {
+    title: "Choosing Payment Methods",
+    path: "/sales/payment-methods",
+    category: "Sales",
+  },
+  {
+    title: "Profit & Loss Report",
+    path: "/reports/profit-loss",
+    category: "Reports",
+  },
+  {
+    title: "Stock Alerts",
+    path: "/inventory/stock-alerts",
+    category: "Inventory",
+  },
+  {
+    title: "Two-Step Verification",
+    path: "/account/two-step-verification",
+    category: "Account",
+  },
   { title: "Setting Up Your Account", path: "/get-started", category: "Get Started" },
   { title: "Creating Invoices", path: "/sales", category: "Sales" },
   { title: "Profit & Loss Report", path: "/reports", category: "Reports" },
