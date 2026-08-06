@@ -1,23 +1,20 @@
 import { useLocation, useNavigate } from "react-router";
 import { Search, ArrowRight, Frown } from "lucide-react";
 import Breadcrumb from "../components/Breadcrumb";
-import { categories } from "../lib/categories";
+import { useHelpCenter } from "../lib/HelpCenterContext";
 
 export default function SearchPage() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { categories, flatArticles } = useHelpCenter();
   const params = new URLSearchParams(location.search);
   const query = params.get("q") || "";
 
   const results = query.trim().length > 0
-    ? categories.flatMap((c) =>
-        c.articles
-          .filter(
-            (a) =>
-              a.title.toLowerCase().includes(query.toLowerCase()) ||
-              a.description.toLowerCase().includes(query.toLowerCase())
-          )
-          .map((a) => ({ ...a, categoryLabel: c.label, categoryColor: c.color, categoryPath: c.path }))
+    ? flatArticles.filter(
+        (a) =>
+          a.title.toLowerCase().includes(query.toLowerCase()) ||
+          a.description.toLowerCase().includes(query.toLowerCase())
       )
     : [];
 
@@ -44,11 +41,11 @@ export default function SearchPage() {
             <button
               key={a.id}
               className="group w-full text-left flex items-start gap-4 p-4 rounded-xl border border-[#27272A] bg-[#111111] hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all"
-              onClick={() => navigate((a as any).categoryPath)}
+              onClick={() => navigate(`${a.categoryPath}/${a.slug}`)}
             >
               <div
                 className="w-1.5 flex-shrink-0 self-stretch rounded-full mt-1"
-                style={{ minHeight: 32, backgroundColor: (a as any).categoryColor }}
+                style={{ minHeight: 32, backgroundColor: a.categoryColor }}
               />
               <div className="flex-1 min-w-0">
                 <p className="text-white font-semibold text-[15px] group-hover:text-[#22D3EE] transition-colors mb-1">{a.title}</p>
@@ -56,9 +53,9 @@ export default function SearchPage() {
                 <div className="flex items-center gap-2 mt-2">
                   <span
                     className="text-xs px-2 py-0.5 rounded-full"
-                    style={{ backgroundColor: `${(a as any).categoryColor}20`, color: (a as any).categoryColor }}
+                    style={{ backgroundColor: `${a.categoryColor}20`, color: a.categoryColor }}
                   >
-                    {(a as any).categoryLabel}
+                    {a.categoryLabel}
                   </span>
                   <span className="text-[#A1A1AA] text-xs">{a.readTime} read</span>
                 </div>

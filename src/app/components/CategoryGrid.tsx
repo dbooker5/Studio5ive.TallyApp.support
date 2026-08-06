@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router";
 import { useRef, useState } from "react";
 import { Rocket, User, ShoppingCart, Package, Boxes, Users, Truck, BarChart2, CreditCard, Settings, Wrench } from "lucide-react";
-import { categories, Category } from "../lib/categories";
+import type { Category } from "../lib/types";
+import { useHelpCenter } from "../lib/HelpCenterContext";
 
 const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   Rocket, User, ShoppingCart, Package, Boxes, Users, Truck, BarChart2, CreditCard, Settings, Wrench,
@@ -73,6 +74,8 @@ function GlowCard({ cat }: { cat: Category }) {
 }
 
 export default function CategoryGrid() {
+  const { categories } = useHelpCenter();
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
       {categories.map((cat) => (

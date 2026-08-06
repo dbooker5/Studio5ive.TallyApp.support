@@ -2,13 +2,15 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router";
 import { Search, TrendingUp, ArrowRight, Zap, Shield, Globe } from "lucide-react";
 import CategoryGrid from "../components/CategoryGrid";
-import { popularArticles, categories } from "../lib/categories";
+import { useHelpCenter } from "../lib/HelpCenterContext";
+import type { FlatArticle } from "../lib/HelpCenterContext";
 
 function SpotlightHero() {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
+  const { featuredArticles } = useHelpCenter();
 
   function handleMouseMove(e: React.MouseEvent) {
     const rect = ref.current?.getBoundingClientRect();
@@ -103,11 +105,11 @@ function SpotlightHero() {
         {/* Quick links */}
         <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
           <span className="text-[#A1A1AA] text-xs">Popular:</span>
-          {popularArticles.slice(0, 4).map((a) => (
+          {featuredArticles.slice(0, 4).map((a) => (
             <button
-              key={a.title}
+              key={a.id}
               className="text-xs px-2.5 py-1 rounded-full border border-[#27272A] text-[#A1A1AA] hover:text-[#22D3EE] hover:border-[#22D3EE]/40 transition-colors"
-              onClick={() => navigate(a.path)}
+              onClick={() => navigate(`${a.categoryPath}/${a.slug}`)}
             >
               {a.title}
             </button>
@@ -119,6 +121,7 @@ function SpotlightHero() {
 }
 
 function StatsRow() {
+  const { categories } = useHelpCenter();
   const stats = [
     { icon: <TrendingUp size={16} className="text-[#22D3EE]" />, label: "Articles", value: `${categories.reduce((s, c) => s + c.articles.length, 0)}+` },
     { icon: <Globe size={16} className="text-[#22D3EE]" />, label: "Languages", value: "7" },
@@ -143,6 +146,9 @@ function StatsRow() {
 
 function PopularArticlesSection() {
   const navigate = useNavigate();
+  const { featuredArticles } = useHelpCenter();
+
+  if (featuredArticles.length === 0) return null;
 
   return (
     <div className="mb-12">
@@ -156,16 +162,16 @@ function PopularArticlesSection() {
         </button>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {popularArticles.map((a) => (
+        {featuredArticles.map((a: FlatArticle) => (
           <button
-            key={a.title}
+            key={a.id}
             className="group flex items-start gap-3 p-4 rounded-xl border border-[#27272A] bg-[#111111] hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all text-left"
-            onClick={() => navigate(a.path)}
+            onClick={() => navigate(`${a.categoryPath}/${a.slug}`)}
           >
             <div className="mt-0.5 w-1.5 h-1.5 rounded-full bg-[#22D3EE] flex-shrink-0" />
             <div>
               <p className="text-white text-sm font-medium group-hover:text-[#22D3EE] transition-colors">{a.title}</p>
-              <p className="text-[#A1A1AA] text-xs mt-0.5">{a.category}</p>
+              <p className="text-[#A1A1AA] text-xs mt-0.5">{a.categoryLabel}</p>
             </div>
           </button>
         ))}

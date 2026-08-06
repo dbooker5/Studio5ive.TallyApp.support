@@ -15,7 +15,7 @@ import {
   Wrench,
   Home,
 } from "lucide-react";
-import { categories } from "../lib/categories";
+import { useHelpCenter } from "../lib/HelpCenterContext";
 
 const iconMap: Record<string, React.ReactNode> = {
   Rocket: <Rocket size={16} />,
@@ -47,6 +47,7 @@ function createSlug(title: string) {
 export default function Sidebar({ open, onClose }: SidebarProps) {
   const location = useLocation();
   const navigate = useNavigate();
+  const { categories } = useHelpCenter();
 
   const currentPath = "/" + location.pathname.split("/")[1];
 

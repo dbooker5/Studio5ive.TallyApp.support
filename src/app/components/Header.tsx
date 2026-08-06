@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { Search, Globe, ChevronDown, Menu, X } from "lucide-react";
-import { categories } from "../lib/categories";
+import { useHelpCenter } from "../lib/HelpCenterContext";
 
 interface HeaderProps {
   sidebarOpen: boolean;
@@ -17,13 +17,10 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
   const [lang, setLang] = useState("English");
   const navigate = useNavigate();
   const searchRef = useRef<HTMLDivElement>(null);
+  const { flatArticles } = useHelpCenter();
 
   const filtered = query.trim().length > 1
-    ? categories.flatMap((c) =>
-        c.articles
-          .filter((a) => a.title.toLowerCase().includes(query.toLowerCase()))
-          .map((a) => ({ ...a, categoryLabel: c.label, categoryPath: c.path }))
-      ).slice(0, 6)
+    ? flatArticles.filter((a) => a.title.toLowerCase().includes(query.toLowerCase())).slice(0, 6)
     : [];
 
   useEffect(() => {
@@ -93,13 +90,13 @@ export default function Header({ sidebarOpen, setSidebarOpen }: HeaderProps) {
                 key={a.id}
                 className="w-full text-left px-4 py-3 hover:bg-[#1a1a1a] transition-colors border-b border-[#27272A] last:border-0 group"
                 onClick={() => {
-                  navigate((a as any).categoryPath);
+                  navigate(`${a.categoryPath}/${a.slug}`);
                   setFocused(false);
                   setQuery("");
                 }}
               >
                 <div className="text-white text-sm font-medium group-hover:text-[#22D3EE] transition-colors">{a.title}</div>
-                <div className="text-[#A1A1AA] text-xs mt-0.5">{(a as any).categoryLabel} · {a.readTime} read</div>
+                <div className="text-[#A1A1AA] text-xs mt-0.5">{a.categoryLabel} · {a.readTime} read</div>
               </button>
             ))}
             <button
