@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 
 import Root from "../layout/Root";
 import Home from "../pages/Home";
@@ -6,12 +6,12 @@ import SearchPage from "../pages/SearchPage";
 import CategoryPage from "../pages/CategoryPage";
 import ArticleDetailPage from "../pages/ArticleDetailPage";
 import ErrorPage from "../pages/ErrorPage";
+import AdminLayout from "../admin/AdminLayout";
+import CategoriesListPage from "../admin/CategoriesListPage";
+import CategoryFormPage from "../admin/CategoryFormPage";
+import ArticlesListPage from "../admin/ArticlesListPage";
+import ArticleFormPage from "../admin/ArticleFormPage";
 
-// Every category and article now comes from the Help Center API instead of
-// one hardcoded route per page (previously ~90 entries here). CategoryPage
-// renders any `/:categoryId` landing page and ArticleDetailPage renders any
-// `/:categoryId/:articleSlug` article — both fetch their content from
-// HelpCenterContext, which is fed by GET /v1/help-center/categories/active/full.
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -34,6 +34,20 @@ export const router = createBrowserRouter([
         path: ":categoryId/:articleSlug",
         Component: ArticleDetailPage,
       },
+    ],
+  },
+  {
+    path: "/admin",
+    Component: AdminLayout,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <Navigate to="/admin/categories" replace /> },
+      { path: "categories", Component: CategoriesListPage },
+      { path: "categories/new", Component: CategoryFormPage },
+      { path: "categories/:id/edit", Component: CategoryFormPage },
+      { path: "articles", Component: ArticlesListPage },
+      { path: "articles/new", Component: ArticleFormPage },
+      { path: "articles/:id/edit", Component: ArticleFormPage },
     ],
   },
 ]);
