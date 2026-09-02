@@ -1,13 +1,9 @@
-// Editor for the `content` block array shared by categories and articles.
-// Mirrors the schema documented in Studio5ive.Backend.TallyApp's
-// services/help_center/README.md and rendered by BlockRenderer.tsx — every
-// block type handled there has a matching editor here so nothing built in
-// this UI can render as blank on the public site.
-
-import { ChevronDown, ChevronUp, Plus } from "lucide-react";
+import { useRef, useState } from "react";
+import { ChevronDown, ChevronUp, Plus, Upload } from "lucide-react";
 import type { Block, FeatureItem, PlatformTab, ScreenshotItem, StepItem } from "../../lib/types";
-import { assetMap } from "../../lib/assetMap";
-import { Field, IconButton, RemoveButton, Select, TextArea, TextInput } from "./form";
+import { assetMap, resolveAsset } from "../../lib/assetMap";
+import { adminUploadImage, ApiError } from "../../lib/adminApi";
+import { Button, Field, IconButton, RemoveButton, Select, TextArea, TextInput } from "./form";
 
 const BLOCK_LABELS: Record<Block["type"], string> = {
   paragraph: "Paragraph",
@@ -347,31 +343,81 @@ function ScreenshotFields({
   onChange: (v: { src: string; alt: string; caption: string }) => void;
 }) {
   const knownKeys = Object.keys(assetMap);
-  const isKnown = knownKeys.includes(value.src);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  async function handleFileSelected(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setUploadError(null);
+    try {
+      const uploaded = await adminUploadImage(file);
+      onChange({ ...value, src: uploaded.url });
+    } catch (err) {
+      setUploadError(err instanceof ApiError ? err.message : "Upload failed.");
+    } finally {
+      setUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  }
 
   return (
     <div className="space-y-3">
-      <Field label="Image" hint="Pick a bundled asset, or choose Custom to paste an absolute URL / new key">
-        <Select
-          value={isKnown || value.src === "" ? value.src : "__custom__"}
-          onChange={(e) => onChange({ ...value, src: e.target.value === "__custom__" ? "" : e.target.value })}
-        >
-          <option value="">Select an image…</option>
-          {knownKeys.map((key) => (
-            <option key={key} value={key}>
-              {key}
-            </option>
-          ))}
-          <option value="__custom__">Custom key / URL…</option>
-        </Select>
+      <Field label="Image" hint="Uploads to the backend's uploads/help-center folder">
+        <div className="flex items-start gap-3">
+          {value.src && (
+            <img
+              src={resolveAsset(value.src)}
+              alt=""
+              className="w-14 h-14 rounded-lg object-cover border border-[#27272A] flex-shrink-0 bg-[#0a0a0a]"
+            />
+          )}
+          <div className="flex-1 space-y-2 min-w-0">
+            <div className="flex items-center gap-2">
+              <Button
+                type="button"
+                variant="secondary"
+                icon={Upload}
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploading}
+              >
+                {uploading ? "Uploading…" : "Upload image"}
+              </Button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleFileSelected}
+                className="hidden"
+              />
+            </div>
+            <TextInput
+              placeholder="Or paste a URL / asset key"
+              value={value.src}
+              onChange={(e) => onChange({ ...value, src: e.target.value })}
+            />
+            {knownKeys.length > 0 && (
+              <Select
+                value={knownKeys.includes(value.src) ? value.src : ""}
+                onChange={(e) => {
+                  if (e.target.value) onChange({ ...value, src: e.target.value });
+                }}
+                className="text-xs py-1.5"
+              >
+                <option value="">…or pick an existing bundled asset</option>
+                {knownKeys.map((key) => (
+                  <option key={key} value={key}>
+                    {key}
+                  </option>
+                ))}
+              </Select>
+            )}
+            {uploadError && <p className="text-xs text-red-400">{uploadError}</p>}
+          </div>
+        </div>
       </Field>
-      {(!isKnown || value.src === "") && (
-        <TextInput
-          placeholder="e.g. sales/new-screenshot or https://…"
-          value={value.src}
-          onChange={(e) => onChange({ ...value, src: e.target.value })}
-        />
-      )}
       <div className="grid grid-cols-2 gap-3">
         <Field label="Alt text">
           <TextInput value={value.alt} onChange={(e) => onChange({ ...value, alt: e.target.value })} />

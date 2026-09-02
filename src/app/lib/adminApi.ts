@@ -175,3 +175,31 @@ export async function adminUpdateArticle(id: string, article: Article): Promise<
 export async function adminDeleteArticle(id: string): Promise<void> {
   await request<void>(`/articles/${encodeURIComponent(id)}`, { method: "DELETE" });
 }
+
+// ─── Uploads ─────────────────────────────────────────────────────────────
+
+export interface UploadedImage {
+  key: string;
+  url: string;
+  filename: string;
+}
+
+export async function adminUploadImage(file: File): Promise<UploadedImage> {
+  const formData = new FormData();
+  formData.append("image", file);
+
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE_URL}${API_PREFIX}/uploads`, { method: "POST", body: formData });
+  } catch {
+    throw new ApiError(`Could not reach the Help Center API at ${API_BASE_URL}. Is the backend running?`);
+  }
+
+  const json = await res.json().catch(() => null);
+
+  if (!res.ok || !json || json.success === false) {
+    throw new ApiError(json?.message || `Upload failed (${res.status})`);
+  }
+
+  return json.data as UploadedImage;
+}
