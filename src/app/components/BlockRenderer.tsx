@@ -1,7 +1,7 @@
 import { AlertCircle, CheckCircle2, CircleCheckBig, Monitor, Smartphone } from "lucide-react";
 import { FaAndroid, FaApple, FaWindows, FaLaptop } from "react-icons/fa";
 import type { ReactNode } from "react";
-import type { Block, NoteVariant } from "../lib/types";
+import type { Block, NoteVariant, ScreenshotItem } from "../lib/types";
 import { renderInline } from "../lib/inlineMarkdown";
 import { resolveAsset } from "../lib/assetMap";
 import ArticleTabs from "./ArticleTabs";
@@ -44,7 +44,17 @@ function PlatformIcon({ platform }: { platform: string }) {
   }
 }
 
-function Step({ n, title, children }: { n: number; title: string; children: ReactNode }) {
+function Step({
+  n,
+  title,
+  screenshot,
+  children,
+}: {
+  n: number;
+  title: string;
+  screenshot?: ScreenshotItem;
+  children: ReactNode;
+}) {
   return (
     <div className="mb-6 flex gap-4">
       <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-[#22D3EE]/30 bg-[#22D3EE]/15 text-xs font-bold text-[#22D3EE]">
@@ -53,6 +63,23 @@ function Step({ n, title, children }: { n: number; title: string; children: Reac
       <div className="min-w-0">
         <p className="mb-1 text-[15px] font-semibold text-white">{title}</p>
         <div className="text-sm leading-relaxed text-[#A1A1AA]">{children}</div>
+        {screenshot && screenshot.src && (
+          <figure className="mt-3">
+            <div className="max-w-[280px] rounded-2xl border border-[#27272A] bg-[#111111] p-2 shadow-2xl shadow-black/30">
+              <img
+                src={resolveAsset(screenshot.src)}
+                alt={screenshot.alt}
+                loading="lazy"
+                className="h-auto w-full rounded-xl"
+              />
+            </div>
+            {screenshot.caption && (
+              <figcaption className="mt-2 max-w-[280px] text-xs leading-relaxed text-[#71717A]">
+                {screenshot.caption}
+              </figcaption>
+            )}
+          </figure>
+        )}
       </div>
     </div>
   );
@@ -88,7 +115,7 @@ function BlockItem({ block }: { block: Block }) {
       return (
         <div className="mb-2">
           {block.items.map((item, i) => (
-            <Step key={i} n={i + 1} title={item.title}>
+            <Step key={i} n={i + 1} title={item.title} screenshot={item.screenshot}>
               {renderInline(item.body)}
             </Step>
           ))}

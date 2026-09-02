@@ -7,6 +7,7 @@ export type NoteVariant = "info" | "warning" | "success";
 export interface StepItem {
   title: string;
   body: string;
+  screenshot?: ScreenshotItem;
 }
 
 export interface ScreenshotItem {

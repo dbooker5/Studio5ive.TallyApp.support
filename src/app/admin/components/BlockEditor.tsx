@@ -300,6 +300,12 @@ function StepsList({ items, onChange }: { items: StepItem[]; onChange: (items: S
             value={item.body}
             onChange={(e) => onChange(items.map((it, idx) => (idx === i ? { ...it, body: e.target.value } : it)))}
           />
+          <ScreenshotFields
+            value={item.screenshot ?? { src: "", alt: "", caption: "" }}
+            onChange={(screenshot) =>
+              onChange(items.map((it, idx) => (idx === i ? { ...it, screenshot } : it)))
+            }
+          />
         </div>
       ))}
       <AddRowButton onClick={() => onChange([...items, { title: "", body: "" }])}>Add step</AddRowButton>
