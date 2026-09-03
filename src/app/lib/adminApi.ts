@@ -5,7 +5,7 @@
 // (Studio5ive.Backend.TallyApp, services/help_center).
 
 import type { Article, Category } from "./types";
-import { API_BASE_URL, API_PREFIX } from "./env";
+import { API_BASE_URL, API_PREFIX, UPLOADS_BASE_URL } from "./env";
 
 export class ApiError extends Error {}
 
@@ -196,5 +196,6 @@ export async function adminUploadImage(file: File): Promise<UploadedImage> {
     throw new ApiError(json?.message || `Upload failed (${res.status})`);
   }
 
-  return json.data as UploadedImage;
+  const { key, filename } = json.data as UploadedImage;
+  return { key, filename, url: `${UPLOADS_BASE_URL}/${key}` };
 }

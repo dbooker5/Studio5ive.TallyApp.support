@@ -7,4 +7,7 @@ export const API_BASE_URL = (
   (import.meta.env.VITE_API_BASE_URL as string | undefined) || "http://localhost:1500"
 ).replace(/\/$/, "");
 
-export const API_PREFIX = (import.meta.env.VITE_API_PREFIX as string | undefined) || "/v1/help-center";
+export const API_VERSION = (import.meta.env.VITE_API_VERSION as string | undefined) || "/v1";
+
+export const API_PREFIX = (import.meta.env.VITE_API_PREFIX as string | undefined) || `${API_VERSION}/help-center`;
+export const UPLOADS_BASE_URL = `${API_BASE_URL}${API_VERSION}/uploads`;
