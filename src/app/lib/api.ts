@@ -1,14 +1,9 @@
 // Talks to the Help Center microservice (Studio5ive.Backend.TallyApp,
-// services/help_center). Set VITE_API_BASE_URL in .env to point at a
-// different backend (defaults to the local dev server on :1500).
+// services/help_center). Set VITE_API_BASE_URL / VITE_API_PREFIX in .env to
+// point at a different backend (defaults to the local dev server on :1500).
 
 import type { Article, Category } from "./types";
-
-const API_BASE_URL = (
-  (import.meta.env.VITE_API_BASE_URL as string | undefined) || "http://localhost:1500"
-).replace(/\/$/, "");
-
-const API_PREFIX = "/v1/help-center";
+import { API_BASE_URL, API_PREFIX } from "./env";
 
 class ApiError extends Error {}
 
