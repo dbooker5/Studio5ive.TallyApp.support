@@ -6,6 +6,7 @@ import BlockRenderer from "../components/BlockRenderer";
 import RelatedArticles from "../components/RelatedArticles";
 import HelpFooter from "../components/HelpFooter";
 import { useHelpCenter } from "../lib/HelpCenterContext";
+import { GalleryProvider } from "../lib/GalleryContext";
 
 /** Dynamic article page — driven entirely by data fetched from the Help
  * Center API. Replaces the ~50 hand-written *Article.tsx pages that used to
@@ -63,7 +64,9 @@ export default function ArticleDetailPage() {
       )}
 
       <div className="mt-2">
-        <BlockRenderer blocks={article.content} />
+        <GalleryProvider blocks={article.content}>
+          <BlockRenderer blocks={article.content} />
+        </GalleryProvider>
       </div>
 
       <RelatedArticles articles={article.relatedArticles} />

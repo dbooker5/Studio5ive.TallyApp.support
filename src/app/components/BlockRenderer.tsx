@@ -1,10 +1,63 @@
-import { AlertCircle, CheckCircle2, CircleCheckBig, Monitor, Smartphone } from "lucide-react";
+import { AlertCircle, CheckCircle2, CircleCheckBig, Monitor, Smartphone, ZoomIn } from "lucide-react";
 import { FaAndroid, FaApple, FaWindows, FaLaptop } from "react-icons/fa";
 import type { ReactNode } from "react";
 import type { Block, NoteVariant, ScreenshotItem } from "../lib/types";
 import { renderInline } from "../lib/inlineMarkdown";
 import { resolveAsset } from "../lib/assetMap";
+import { useGallery } from "../lib/GalleryContext";
 import ArticleTabs from "./ArticleTabs";
+
+/** One screenshot as a full <figure> — frame, image, caption — that opens
+ * the shared lightbox (at this image's position in the article/category's
+ * full image sequence) on click. Falls back to non-clickable if rendered
+ * outside a GalleryProvider, or if this image isn't in its list. Used by
+ * `Step`'s inline screenshot, standalone `screenshot` blocks, and every item
+ * of a `screenshotGrid` — the three places a screenshot can appear. */
+function ScreenshotFigure({
+  src,
+  alt,
+  caption,
+  maxWidthClass,
+  centered = true,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+  maxWidthClass: string;
+  /** Step's inline screenshot sits left-aligned under its step text, like
+   * the original markup did; standalone/grid screenshots stay centered. */
+  centered?: boolean;
+}) {
+  const gallery = useGallery();
+  const index = gallery ? gallery.indexOf({ src, alt, caption }) : -1;
+  const clickable = index !== -1;
+  const alignClass = centered ? "mx-auto" : "";
+
+  return (
+    <figure>
+      <div
+        className={`group relative ${alignClass} ${maxWidthClass} rounded-2xl border border-[#27272A] bg-[#111111] p-2 shadow-2xl shadow-black/30 ${clickable ? "cursor-zoom-in transition-colors hover:border-[#22D3EE]/50" : ""}`}
+        onClick={clickable ? () => gallery!.openAt(index) : undefined}
+        role={clickable ? "button" : undefined}
+        aria-label={clickable ? `View "${alt}" full size` : undefined}
+      >
+        <img src={resolveAsset(src)} alt={alt} loading="lazy" className="h-auto w-full rounded-xl" />
+        {clickable && (
+          <span className="pointer-events-none absolute inset-2 flex items-center justify-center rounded-xl bg-black/0 opacity-0 transition-all group-hover:bg-black/40 group-hover:opacity-100">
+            <ZoomIn size={22} className="text-white drop-shadow" />
+          </span>
+        )}
+      </div>
+      {caption && (
+        <figcaption
+          className={`${alignClass} mt-3 ${centered ? "max-w-xl text-center" : maxWidthClass} text-xs leading-relaxed text-[#71717A]`}
+        >
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
 
 const NOTE_STYLES: Record<NoteVariant, string> = {
   info: "border-[#22D3EE]/30 bg-[#22D3EE]/5 text-[#cef9ff]",
@@ -64,21 +117,15 @@ function Step({
         <p className="mb-1 text-[15px] font-semibold text-white">{title}</p>
         <div className="text-sm leading-relaxed text-[#A1A1AA]">{children}</div>
         {screenshot && screenshot.src && (
-          <figure className="mt-3">
-            <div className="max-w-[280px] rounded-2xl border border-[#27272A] bg-[#111111] p-2 shadow-2xl shadow-black/30">
-              <img
-                src={resolveAsset(screenshot.src)}
-                alt={screenshot.alt}
-                loading="lazy"
-                className="h-auto w-full rounded-xl"
-              />
-            </div>
-            {screenshot.caption && (
-              <figcaption className="mt-2 max-w-[280px] text-xs leading-relaxed text-[#71717A]">
-                {screenshot.caption}
-              </figcaption>
-            )}
-          </figure>
+          <div className="mt-3">
+            <ScreenshotFigure
+              src={screenshot.src}
+              alt={screenshot.alt}
+              caption={screenshot.caption}
+              maxWidthClass="max-w-[340px]"
+              centered={false}
+            />
+          </div>
         )}
       </div>
     </div>
@@ -144,28 +191,16 @@ function BlockItem({ block }: { block: Block }) {
 
     case "screenshot":
       return (
-        <figure className="my-6">
-          <div className="mx-auto max-w-[340px] rounded-2xl border border-[#27272A] bg-[#111111] p-2 shadow-2xl shadow-black/30">
-            <img src={resolveAsset(block.src)} alt={block.alt} loading="lazy" className="h-auto w-full rounded-xl" />
-          </div>
-          <figcaption className="mx-auto mt-3 max-w-xl text-center text-xs leading-relaxed text-[#71717A]">
-            {block.caption}
-          </figcaption>
-        </figure>
+        <div className="my-6">
+          <ScreenshotFigure src={block.src} alt={block.alt} caption={block.caption} maxWidthClass="max-w-[400px]" />
+        </div>
       );
 
     case "screenshotGrid":
       return (
         <div className="grid items-start gap-5 sm:grid-cols-2 my-6">
           {block.items.map((item, i) => (
-            <figure key={i}>
-              <div className="mx-auto max-w-[340px] rounded-2xl border border-[#27272A] bg-[#111111] p-2 shadow-2xl shadow-black/30">
-                <img src={resolveAsset(item.src)} alt={item.alt} loading="lazy" className="h-auto w-full rounded-xl" />
-              </div>
-              <figcaption className="mx-auto mt-3 max-w-xl text-center text-xs leading-relaxed text-[#71717A]">
-                {item.caption}
-              </figcaption>
-            </figure>
+            <ScreenshotFigure key={i} src={item.src} alt={item.alt} caption={item.caption} maxWidthClass="max-w-[380px]" />
           ))}
         </div>
       );

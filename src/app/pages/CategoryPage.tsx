@@ -6,6 +6,7 @@ import BlockRenderer from "../components/BlockRenderer";
 import RelatedArticles from "../components/RelatedArticles";
 import HelpFooter from "../components/HelpFooter";
 import { useHelpCenter } from "../lib/HelpCenterContext";
+import { GalleryProvider } from "../lib/GalleryContext";
 
 /** Dynamic category landing page — driven entirely by data fetched from the
  * Help Center API. Replaces the old hardcoded ArticlePage.tsx / GetStarted.tsx
@@ -70,7 +71,9 @@ export default function CategoryPage() {
         <VideoGuide title={cat.video.title} subtitle={cat.video.subtitle} duration={cat.video.duration} />
       )}
 
-      <BlockRenderer blocks={cat.content} />
+      <GalleryProvider blocks={cat.content}>
+        <BlockRenderer blocks={cat.content} />
+      </GalleryProvider>
 
       {cat.articles.length > 0 && (
         <div className="mt-10 border-t border-[#27272A] pt-8">
