@@ -7,8 +7,8 @@ const WHATSAPP = [
 ];
 const EMAILS = ["simoninziria@studio5ive.org", "info@studio5ive.org"];
 const ENDPOINT =
-  (import.meta as any).env?.VITE_CONTACT_ENDPOINT || "https://formsubmit.co/ajax/info@studio5ive.org";
-const MAX_FILE_MB = 25;
+  (import.meta as any).env?.VITE_CONTACT_ENDPOINT || "https://formsubmit.co/info@studio5ive.org";
+const MAX_FILE_MB = 5; // FormSubmit attachment limit
 
 const fieldCls =
   "w-full bg-transparent border-0 border-b-2 border-black/50 focus:border-black outline-none py-2 text-black placeholder:text-black/55 text-sm";
@@ -59,8 +59,8 @@ export default function ContactUs() {
       fd.append("_captcha", "false");
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       files.forEach((f) => fd.append("attachment", f, f.name));
-      const res = await fetch(ENDPOINT, { method: "POST", body: fd, headers: { Accept: "application/json" } });
-      if (!res.ok) throw new Error("Request failed");
+      // File uploads only work on the non-AJAX endpoint, whose response is opaque cross-origin.
+      await fetch(ENDPOINT, { method: "POST", body: fd, mode: "no-cors" });
       setStatus("sent");
       setForm({ name: "", company: "", phone: "", email: "", message: "" });
       setFiles([]);
@@ -171,7 +171,7 @@ export default function ContactUs() {
                       onClick={() => fileRef.current?.click()}
                       className="inline-flex items-center gap-2 text-sm font-medium border border-dashed border-black/60 px-4 py-2 hover:bg-black/10"
                     >
-                      <Paperclip size={16} /> Attach screenshots or video
+                      <Paperclip size={16} /> Attach screenshots or short video (max 5MB each)
                     </button>
                     {files.length > 0 && (
                       <ul className="mt-2 flex flex-wrap gap-2">
