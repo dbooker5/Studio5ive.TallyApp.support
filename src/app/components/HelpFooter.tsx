@@ -47,14 +47,14 @@ export default function HelpFooter() {
         <p className="text-[#A1A1AA] text-sm mb-5">Our support team is available 24/7.</p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a
-            href="info@studio5ive.org"
+            href="mailto:info@studio5ive.org"
             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-[#27272A] bg-[#1a1a1a] text-[#A1A1AA] hover:text-white hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all text-sm font-medium"
           >
             <Mail size={15} className="text-[#22D3EE]" />
             Email Support
           </a>
           <a
-            href="https://wa.me/1234567890"
+            href="https://wa.me/254706751272"
             className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-[#27272A] bg-[#1a1a1a] text-[#A1A1AA] hover:text-white hover:border-[#22D3EE]/40 hover:bg-[#22D3EE]/5 transition-all text-sm font-medium"
           >
             <MessageCircle size={15} className="text-[#22D3EE]" />

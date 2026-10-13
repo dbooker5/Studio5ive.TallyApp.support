@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import ContactUs from "../components/ContactUs";
 import { HelpCenterProvider } from "../lib/HelpCenterContext";
 
 export default function Root() {
@@ -17,6 +18,7 @@ export default function Root() {
             <Outlet />
           </main>
         </div>
+      <ContactUs />
       </div>
     </HelpCenterProvider>
   );
